@@ -4,6 +4,7 @@ $secondary-color: #E5E5E5;
 @import './partials/setup';
 @import './partials/button';
 @import './partials/navigation';
+@import './partials/userQuestions';
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
@@ -14,6 +15,10 @@ html {
 
 body {
     font-family: 'Poppins';
+}
+
+h1 {
+    font-size: 1.5rem;
 }
 
 p {
