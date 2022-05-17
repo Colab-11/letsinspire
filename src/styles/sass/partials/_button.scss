@@ -11,3 +11,12 @@ button {
     background-color: $primary-color;
     color: #fff;
 }
+
+.btn-primary a {
+    padding: 12px 22px;
+    text-decoration: none;
+    background-color: $primary-color;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    color: #fff;
+}

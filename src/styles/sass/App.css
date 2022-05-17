@@ -245,6 +245,15 @@ button {
   color: #fff;
 }
 
+.btn-primary a {
+  padding: 12px 22px;
+  text-decoration: none;
+  background-color: #074EE8;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  color: #fff;
+}
+
 nav {
   height: 20vh;
   padding: 10px 0;
