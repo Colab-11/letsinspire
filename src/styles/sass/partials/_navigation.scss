@@ -1,0 +1,28 @@
+nav {
+    height: 20vh;
+    padding: 10px 0;
+}
+
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    .logo {
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 1rem 0 0 0;
+    }
+    p {
+        font-size: 0.8rem;
+    }
+}
+
+.user-sign-in {
+    button:first-of-type {
+        margin-right: 20px;
+    }
+}

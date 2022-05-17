@@ -1,0 +1,53 @@
+$primary-color: #074EE8;
+$secondary-color: #E5E5E5;
+
+@import './partials/setup';
+@import './partials/button';
+@import './partials/navigation';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
+html {
+    font-size: 125%; // makes font 20px
+}
+
+body {
+    font-family: 'Poppins';
+}
+
+p {
+    font-size: 0.8rem;
+}
+
+.landing-page {
+    height: 100vh;
+    main {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.wrapper {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.welcome-image {
+    background-image: url(../../assets/undraw_placeholder.png);
+    height: 300px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.welcome-image ~ p {
+    line-height: 1.5;
+    text-align: center;
+    width: 70%;
+    margin: 50px auto;
+}
