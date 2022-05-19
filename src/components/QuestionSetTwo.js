@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navigation from "./Navigation";
 import LoadingResults from "./LoadingResults";
 import Navigator from "./Navigator";
+import AnswerFillInput from "./AnswerFillInput";
 
 const QuestionSetTwo = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -53,6 +54,16 @@ const QuestionSetTwo = () => {
                         )
                     )}
                 </div>
+            </div>   
+            <Navigator next={navigateNext} back={navigateBack}/> 
+        </>
+        : null}
+
+        {userStep === 2 ? 
+        <>
+            <div className="question-container wrapper">
+                <h1>What would you like to call this new project you’ll be working on? (Be Creative!)</h1>
+                <AnswerFillInput />
             </div>   
             <Navigator next={navigateNext} back={navigateBack}/> 
         </>
