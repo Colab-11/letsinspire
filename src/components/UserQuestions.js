@@ -1,5 +1,9 @@
 import Navigation from "./Navigation";
 import { useState } from "react";
+import AnswerFillInput from "./AnswerFillInput";
+import AnswerBtnInputA from "./AnswerBtnInputA";
+import AnswerBtnInputB from "./AnswerBtnInputB";
+import AnswerBtnInputBTooltip from "./AnswerBtnInputBTooltip";
 
 function UserQuestions() {
     const [questionIndex, setQuestionIndex] = useState(0);
@@ -25,7 +29,9 @@ function UserQuestions() {
                 'Retail',
                 'Gaming',
                 'Healthcare',
-                'Education'
+                'Education',
+                'Business / IT',
+                'Government'
             ]
         },
         {
@@ -48,6 +54,8 @@ function UserQuestions() {
     ]
 
     const navigateNext = () => {
+        // Based on question index, store answer in state
+            // If text input answer, clear text field
         if (questionIndex < 4) {
             setQuestionIndex(questionIndex + 1);
         }
@@ -66,10 +74,12 @@ function UserQuestions() {
                     <p>Question #{questionIndex + 1}</p>
                     <h1>{questionsArr[questionIndex].question}</h1>
                     
-                    <form>
-                        <input type="text" id="name" name="name" className="name-input"/>
-                    </form>
-                    
+                    {questionIndex === 0 ? <AnswerFillInput /> : null}
+                    {questionIndex === 1 ? <AnswerBtnInputA response={questionsArr} index={questionIndex}/> : null}  
+                    {questionIndex === 2 ? <AnswerBtnInputBTooltip response={questionsArr} index={questionIndex}/> : null}              
+                    {questionIndex === 3 ? <AnswerBtnInputB response={questionsArr} index={questionIndex}/> : null}        
+                    {questionIndex === 4 ? <AnswerBtnInputB response={questionsArr} index={questionIndex}/> : null}  
+                                      
                     <div className="nav-btn">
                         <button className="btn-back" onClick={navigateBack}>Back</button>
                         <button className="btn-primary btn-next" onClick={navigateNext}>Next</button>

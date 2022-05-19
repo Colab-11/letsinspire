@@ -301,6 +301,41 @@ nav {
   padding-right: 60px;
 }
 
+.answer-group {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  row-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.answer-group button {
+  width: calc(50% - 20px);
+  border-radius: 0;
+}
+
+.answer-one-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  row-gap: 20px;
+}
+.answer-one-group button {
+  width: calc(50% - 20px);
+  border-radius: 0;
+}
+
+.answer-fill button {
+  padding: 80px;
+}
+
+.answer-outline button {
+  border: 2px solid lightgrey;
+  padding: 20px;
+  background-color: transparent;
+}
+
 html {
   font-size: 125%;
 }
