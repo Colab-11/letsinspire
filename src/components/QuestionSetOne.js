@@ -4,10 +4,11 @@ import AnswerFillInput from "./AnswerFillInput";
 import AnswerBtnInputA from "./AnswerBtnInputA";
 import AnswerBtnInputB from "./AnswerBtnInputB";
 import AnswerBtnInputBTooltip from "./AnswerBtnInputBTooltip";
+import Navigator from "./Navigator";
 
-function UserQuestions() {
+function QuestionSetOne() {
     const [questionIndex, setQuestionIndex] = useState(0);
-
+    
     const questionsArr = [
         {
             question: 'What is your name?',
@@ -39,7 +40,8 @@ function UserQuestions() {
             options: [
                 'YouTube Videos',
                 'Completed Project Samples ',
-                'Links to Relevant Courses'
+                'Links to Relevant Courses',
+                'Links to Relevant Websites'
             ]
         },
         {
@@ -55,7 +57,6 @@ function UserQuestions() {
 
     const navigateNext = () => {
         // Based on question index, store answer in state
-            // If text input answer, clear text field
         if (questionIndex < 4) {
             setQuestionIndex(questionIndex + 1);
         }
@@ -67,10 +68,14 @@ function UserQuestions() {
         }
     }
 
+
     return(
         <div>
             <Navigation />
+            {questionIndex <= 4 ? 
+            <>
                 <div className="question-container wrapper">
+
                     <p>Question #{questionIndex + 1}</p>
                     <h1>{questionsArr[questionIndex].question}</h1>
                     
@@ -79,14 +84,14 @@ function UserQuestions() {
                     {questionIndex === 2 ? <AnswerBtnInputBTooltip response={questionsArr} index={questionIndex}/> : null}              
                     {questionIndex === 3 ? <AnswerBtnInputB response={questionsArr} index={questionIndex}/> : null}        
                     {questionIndex === 4 ? <AnswerBtnInputB response={questionsArr} index={questionIndex}/> : null}  
-                                      
-                    <div className="nav-btn">
-                        <button className="btn-back" onClick={navigateBack}>Back</button>
-                        <button className="btn-primary btn-next" onClick={navigateNext}>Next</button>
-                    </div>
+
                 </div>
+                <Navigator next={navigateNext} back={navigateBack} index={questionIndex}/>
+            </>
+            : null
+            }   
         </div>
     )
 }
 
-export default UserQuestions;
+export default QuestionSetOne;

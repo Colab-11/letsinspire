@@ -6,6 +6,7 @@ $secondary-color: #E5E5E5;
 @import './partials/navigation';
 @import './partials/userQuestions';
 @import './partials/answers';
+@import './partials/results';
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
@@ -19,7 +20,8 @@ body {
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    line-height: 1.7;
 }
 
 p {

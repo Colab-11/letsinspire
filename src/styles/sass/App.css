@@ -336,6 +336,17 @@ nav {
   background-color: transparent;
 }
 
+.loading-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(239, 239, 239);
+  height: 50vh;
+}
+.loading-results h1 {
+  font-weight: 600;
+}
+
 html {
   font-size: 125%;
 }
@@ -345,7 +356,8 @@ body {
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  line-height: 1.7;
 }
 
 p {
