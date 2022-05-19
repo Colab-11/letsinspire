@@ -3,6 +3,7 @@ import Navigation from "./Navigation";
 import LoadingResults from "./LoadingResults";
 import Navigator from "./Navigator";
 import AnswerFillInput from "./AnswerFillInput";
+import UserResult from "./UserResult";
 
 const QuestionSetTwo = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +24,7 @@ const QuestionSetTwo = () => {
 
     const navigateNext = () => {
         // Based on question index, store answer in state
-        if (userStep < 2) {
+        if (userStep < 3) {
             setUserStep(userStep + 1);
         }
     }
@@ -68,7 +69,13 @@ const QuestionSetTwo = () => {
             <Navigator next={navigateNext} back={navigateBack}/> 
         </>
         : null}
+
+        {userStep === 3 ?
+            <UserResult />
+        : null
+        }
         </>
+
     )
 }
 
