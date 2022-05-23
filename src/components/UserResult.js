@@ -12,9 +12,9 @@ const UserResult = ({userInput}) => {
                     <h2>Sample Completed Projects</h2>
                     <div></div>
                     <ul className="left-results-links">
-                        <li><a href="#" target="_blank">https://www.joincolab.io/projects</a></li>
-                        <li><a href="#" target="_blank">https://www.joincolab.io/projects</a></li>
-                        <li><a href="#" target="_blank">https://www.joincolab.io/projects</a></li>
+                        <li><a href="https://www.joincolab.io/projects" target="_blank" rel="noreferrer">https://www.joincolab.io/projects</a></li>
+                        <li><a href="https://www.joincolab.io/projects" target="_blank" rel="noreferrer">https://www.joincolab.io/projects</a></li>
+                        <li><a href="https://www.joincolab.io/projects" target="_blank" rel="noreferrer">https://www.joincolab.io/projects</a></li>
                     </ul>
                 </section>
                 <div className="separator-line"></div>
@@ -40,9 +40,9 @@ const UserResult = ({userInput}) => {
                     <div className="bottom-results-links">
                         <h2>Additional Webpages</h2>
                         <ul>
-                            <li><a href="#" target="_blank">https://www.joincolab.io/projects</a></li>
-                            <li><a href="#" target="_blank">https://www.joincolab.io/projects</a></li>
-                            <li><a href="#" target="_blank">https://www.joincolab.io/projects</a></li>
+                            <li><a href="https://www.joincolab.io/projects" target="_blank" rel="noreferrer">https://www.joincolab.io/projects</a></li>
+                            <li><a href="https://www.joincolab.io/projects" target="_blank" rel="noreferrer">https://www.joincolab.io/projects</a></li>
+                            <li><a href="https://www.joincolab.io/projects" target="_blank" rel="noreferrer">https://www.joincolab.io/projects</a></li>
                         </ul>
                     </div>
                     <div className="bottom-results-image"></div>
