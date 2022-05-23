@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import LoadingResults from "./LoadingResults";
 import Navigator from "./Navigator";
 import AnswerFillInput from "./AnswerFillInput";
+import UserResult from "./UserResult";
 
-const QuestionSetTwo = () => {
+const QuestionSetTwo = ({userInput, setUserInput}) => {
     const [isLoading, setIsLoading] = useState(true);
     const [userStep, setUserStep] = useState(0);
+    const [fillAlert, setFillAlert] = useState(false);
 
     const mockRequest = () => {
         setTimeout(() => {
@@ -14,13 +16,32 @@ const QuestionSetTwo = () => {
         }, 1000)
     }
 
-    useEffect(() => {
-        mockRequest();
-    }, [isLoading]);
+    const handleChange = (e) => {
+        e.preventDefault();
+        const input = e.target.value;
+        
+        if (userStep === 2) {
+            setUserInput(prevState => ({
+                ...prevState,
+                projectName: input
+            }));
+        }
+    }
+
+    if (userStep === 0) {
+            mockRequest();
+    }
 
     const answers = ['Note-taking application', 'Online Hotel Room Booking System']
 
     const navigateNext = () => {
+        if (userStep === 2 && userInput.projectName === '') {
+            setFillAlert(true);
+            return
+        } else {
+            setFillAlert(false);
+        }
+
         if (userStep < 3) {
             setUserStep(userStep + 1);
         }
@@ -52,7 +73,7 @@ const QuestionSetTwo = () => {
                     )}
                 </div>
             </div>   
-            <Navigator next={navigateNext} back={navigateBack} />
+            <Navigator next={navigateNext} back={navigateBack} userStep={userStep}/>
         </>
         : null}
 
@@ -60,11 +81,17 @@ const QuestionSetTwo = () => {
         <>
             <div className="question-container wrapper">
                 <h1>What would you like to call this new project you’ll be working on? (Be Creative!)</h1>
-                <AnswerFillInput />
+                <AnswerFillInput userStep={userStep} userInput={userInput} handleChange={handleChange} fillAlert={fillAlert}/>
             </div>   
             <Navigator next={navigateNext} back={navigateBack} userStep={userStep}/> 
         </>
         : null}
+
+        {userStep === 3 ?
+        <div className="btn-primary-link btn-next">
+            <UserResult userInput={userInput}/>
+        </div>
+        : null }
         </>
 
     )

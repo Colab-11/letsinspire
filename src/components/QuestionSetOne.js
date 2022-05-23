@@ -4,8 +4,10 @@ import AnswerBtnInputA from "./AnswerBtnInputA";
 import AnswerBtnInputB from "./AnswerBtnInputB";
 import Navigator from "./Navigator";
 
-function QuestionSetOne({setUserInput}) {
+function QuestionSetOne({userInput, setUserInput}) {
     const [questionIndex, setQuestionIndex] = useState(0);
+    const [fillAlert, setFillAlert] = useState(false);
+    const [selectAlert, setSelectAlert] = useState(false);
 
     const questionsArr = [
         {
@@ -54,10 +56,25 @@ function QuestionSetOne({setUserInput}) {
     ]
 
     const navigateNext = () => {
+        if (questionIndex === 0 && userInput.userName === '') {
+            setFillAlert(true);
+            return
+        } else {
+            setFillAlert(false);
+        }
+
+        if (questionIndex === 1 && userInput.language === '') {
+            setSelectAlert(true);
+            return
+        } else {
+            setSelectAlert(false);
+        }
+
         if (questionIndex < 4) {
             setQuestionIndex(questionIndex + 1);
         }
     }
+
 
     const navigateBack = () => {
         if (questionIndex > 0) {
@@ -68,6 +85,7 @@ function QuestionSetOne({setUserInput}) {
     const handleChange = (e) => {
         e.preventDefault();
         const input = e.target.value;
+        
         if (questionIndex === 0) {
             setUserInput(prevState => ({
                 ...prevState,
@@ -96,12 +114,11 @@ function QuestionSetOne({setUserInput}) {
                     <p>Question #{questionIndex + 1}</p>
                     <h1>{questionsArr[questionIndex].question}</h1>
                     
-                    {questionIndex === 0 ? <AnswerFillInput handleChange={handleChange}/> : null}
-                    {questionIndex === 1 ? <AnswerBtnInputA response={questionsArr} index={questionIndex} handleSelect={handleSelect}/> : null}  
-                    {questionIndex === 2 ? <AnswerBtnInputB response={questionsArr} index={questionIndex}/> : null}              
-                    {questionIndex === 3 ? <AnswerBtnInputB response={questionsArr} index={questionIndex}/> : null}        
-                    {questionIndex === 4 ? <AnswerBtnInputB response={questionsArr} index={questionIndex}/> : null}  
-
+                        {questionIndex === 0 ? <AnswerFillInput handleChange={handleChange} fillAlert={fillAlert} userInput={userInput} index={questionIndex}/> : null}
+                        {questionIndex === 1 ? <AnswerBtnInputA response={questionsArr} index={questionIndex} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}  
+                        {questionIndex === 2 ? <AnswerBtnInputB response={questionsArr} index={questionIndex}/> : null}              
+                        {questionIndex === 3 ? <AnswerBtnInputB response={questionsArr} index={questionIndex}/> : null}        
+                        {questionIndex === 4 ? <AnswerBtnInputB response={questionsArr} index={questionIndex}/> : null}  
                 </div>
                 <Navigator next={navigateNext} back={navigateBack} index={questionIndex}/>
             </>

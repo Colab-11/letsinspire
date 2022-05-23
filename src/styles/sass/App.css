@@ -254,6 +254,14 @@ button {
   color: #fff;
 }
 
+.btn-primary-link a {
+  font-size: 0.8rem;
+  color: #fff;
+  border-radius: 4px;
+  padding: 10px 60px;
+  background-color: #074EE8;
+}
+
 nav {
   height: 20vh;
   padding: 10px 0;
@@ -295,6 +303,7 @@ nav {
   margin: 50px auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .nav-btn button {
   padding-left: 60px;
@@ -336,6 +345,29 @@ nav {
   background-color: transparent;
 }
 
+.alert {
+  font-size: 1rem;
+  padding-top: 20px;
+}
+
+.user-container a {
+  padding: 0px;
+  color: #074EE8;
+  background-color: transparent;
+}
+
+.title-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.title-section > h1 {
+  width: 60%;
+}
+.title-section p {
+  font-size: 1rem;
+}
+
 .loading-results {
   display: flex;
   justify-content: center;
@@ -351,28 +383,6 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.title-section {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.title-section form {
-  width: 55%;
-}
-.title-section form label {
-  font-size: 1.4rem;
-  font-weight: 600;
-  padding-right: 20px;
-}
-.title-section form input {
-  border: none;
-  border-bottom: 1px solid grey;
-}
-.title-section p {
-  width: 35%;
 }
 
 .left-results-section {

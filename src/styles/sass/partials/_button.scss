@@ -12,11 +12,23 @@ button {
     color: #fff;
 }
 
-.btn-primary a {
-    padding: 12px 22px;
-    text-decoration: none;
-    background-color: $primary-color;
-    font-size: 0.8rem;
-    border-radius: 4px;
-    color: #fff;
+.btn-primary { 
+    a {
+        padding: 12px 22px;
+        text-decoration: none;
+        background-color: $primary-color;
+        font-size: 0.8rem;
+        border-radius: 4px;
+        color: #fff;
+    }
+}
+
+.btn-primary-link {
+    a { 
+        font-size: 0.8rem;
+        color: #fff;
+        border-radius: 4px;
+        padding: 10px 60px;
+        background-color: $primary-color;
+    }   
 }

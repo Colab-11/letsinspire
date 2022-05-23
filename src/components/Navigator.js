@@ -5,22 +5,20 @@ const Navigator = ({next, back, index, userStep}) => {
         <div className="nav-btn">
             <button className="btn-back" onClick={back}>Back</button>
 
-            {index !== 4 ?
+            {index < 4 ?
                 <button className="btn-primary btn-next" onClick={next}>Next</button>
             : null
             }
 
             {index === 4 ? 
-                <div className="btn-primary">
+                <div className="btn-primary-link btn-next">
                     <Link to="/customize">Next</Link>
                 </div>
             : null
             }
 
-            {userStep === 2 ?
-            <div className="btn-primary">
-                <Link to="/result">Next</Link>
-            </div>
+            {userStep ?
+                <button className="btn-primary btn-next" onClick={next}>Next</button>
             : null
             }
         </div>
