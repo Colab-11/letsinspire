@@ -325,9 +325,12 @@ nav {
 
 .answer-one-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   padding: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   row-gap: 20px;
 }
 .answer-one-group button {
@@ -341,7 +344,7 @@ nav {
 }
 
 .answer-outline button {
-  border: 2px solid lightgrey;
+  border: 3px solid lightgrey;
   padding: 20px;
   background-color: transparent;
 }
@@ -352,7 +355,7 @@ nav {
 }
 
 .answer-fill .active, .answer-outline .active {
-  border: 2px solid #074EE8;
+  border: 3px solid #afafaf;
 }
 
 .user-container a {
@@ -491,4 +494,38 @@ a {
   text-align: center;
   width: 70%;
   margin: 50px auto;
+}
+
+.loading-results {
+  display: flex;
+  justify-content: center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  background-color: #333;
+  border-radius: 100%;
+  -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+  animation: sk-scaleout 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
 }/*# sourceMappingURL=App.css.map */
