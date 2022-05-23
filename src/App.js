@@ -10,6 +10,9 @@ function App() {
   const [userInput, setUserInput] = useState({
     userName: "",
     language: "",
+    interest: "",
+    resource: "",
+    projectType: "",
     projectName: ""
   });
 

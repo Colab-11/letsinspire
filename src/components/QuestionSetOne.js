@@ -39,7 +39,7 @@ function QuestionSetOne({userInput, setUserInput}) {
             question: 'What resources would you like to see to facilitate building your project?',
             options: [
                 'YouTube Videos',
-                'Completed Project Samples ',
+                'Completed Project Samples',
                 'Links to Relevant Courses',
                 'Links to Relevant Websites'
             ]
@@ -103,6 +103,24 @@ function QuestionSetOne({userInput, setUserInput}) {
                 language: input
             }));           
         }
+        if (questionIndex === 2) {
+            setUserInput(prevState => ({
+                ...prevState,
+                interest: input
+            }));           
+        }
+        if (questionIndex === 3) {
+            setUserInput(prevState => ({
+                ...prevState,
+                resource: input
+            }));           
+        }
+        if (questionIndex === 4) {
+            setUserInput(prevState => ({
+                ...prevState,
+                length: input
+            }));           
+        }
     }
 
     return(
@@ -115,10 +133,10 @@ function QuestionSetOne({userInput, setUserInput}) {
                     <h1>{questionsArr[questionIndex].question}</h1>
                     
                         {questionIndex === 0 ? <AnswerFillInput handleChange={handleChange} fillAlert={fillAlert} userInput={userInput} index={questionIndex}/> : null}
-                        {questionIndex === 1 ? <AnswerBtnInputA response={questionsArr} index={questionIndex} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}  
-                        {questionIndex === 2 ? <AnswerBtnInputB response={questionsArr} index={questionIndex}/> : null}              
-                        {questionIndex === 3 ? <AnswerBtnInputB response={questionsArr} index={questionIndex}/> : null}        
-                        {questionIndex === 4 ? <AnswerBtnInputB response={questionsArr} index={questionIndex}/> : null}  
+                        {questionIndex === 1 ? <AnswerBtnInputA response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}  
+                        {questionIndex === 2 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert} /> : null}              
+                        {questionIndex === 3 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}        
+                        {questionIndex === 4 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}  
                 </div>
                 <Navigator next={navigateNext} back={navigateBack} index={questionIndex}/>
             </>

@@ -1,4 +1,4 @@
-const AnswerBtnInputA = ({response, index, handleSelect, selectAlert}) => {
+const AnswerBtnInputA = ({response, index, userInput, handleSelect, selectAlert}) => {
     const answers = response[index];
     return(
         <>
@@ -6,7 +6,7 @@ const AnswerBtnInputA = ({response, index, handleSelect, selectAlert}) => {
         <div className="answer-fill answer-group">
             {answers.options.map((answer, index) => 
                 (
-                    <button value={answer} key={index} onClick={handleSelect}>{answer}</button>
+                    <button className={userInput.language === answer ? "active" : null} value={answer} key={index} onClick={handleSelect}>{answer}</button>
                 )
             )}
         </div>

@@ -25,6 +25,7 @@
 
 .answer-fill {
     button {
+        border: 2px solid #eaeaea;
         padding: 80px;
     }
 }
@@ -41,4 +42,10 @@
 .alert {
     font-size: 1rem;
     padding-top: 20px;
+}
+
+.answer-fill, .answer-outline {
+    .active {
+        border: 2px solid $primary-color;
+    }
 }

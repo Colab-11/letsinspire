@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import LoadingResults from "./LoadingResults";
 import Navigator from "./Navigator";
 import AnswerFillInput from "./AnswerFillInput";
@@ -53,6 +53,17 @@ const QuestionSetTwo = ({userInput, setUserInput}) => {
         }
     }
 
+    const handleSelect = (e) => {
+        e.preventDefault();
+        const input = e.target.value;
+        if (userStep === 1) {
+            setUserInput(prevState => ({
+                ...prevState,
+                projectType: input
+            }));           
+        }
+    }
+
     return (
         <>      
         <div>
@@ -68,7 +79,7 @@ const QuestionSetTwo = ({userInput, setUserInput}) => {
                 <div className="answer-fill answer-group">
                     {answers.map((answer, index) => 
                         (
-                            <button key={index}>{answer}</button>
+                            <button key={index} className={userInput.projectType === answer ? "active" : null} onClick={handleSelect} value={answer}>{answer}</button>
                         )
                     )}
                 </div>
@@ -93,7 +104,6 @@ const QuestionSetTwo = ({userInput, setUserInput}) => {
         </div>
         : null }
         </>
-
     )
 }
 
