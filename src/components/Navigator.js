@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Navigator = ({next, back, index}) => {
+const Navigator = ({next, back, index, userStep}) => {
     return (
         <div className="nav-btn">
             <button className="btn-back" onClick={back}>Back</button>
@@ -14,6 +14,13 @@ const Navigator = ({next, back, index}) => {
                 <div className="btn-primary">
                     <Link to="/customize">Next</Link>
                 </div>
+            : null
+            }
+
+            {userStep === 2 ?
+            <div className="btn-primary">
+                <Link to="/result">Next</Link>
+            </div>
             : null
             }
         </div>

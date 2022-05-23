@@ -1,14 +1,12 @@
-const UserResult = () => {
+const UserResult = ({userInput}) => {
     return (
         <div className="user-container wrapper">
-            <div className="title-section">
-                <form>
-                    <label>Project Name:</label>
-                    <input type="text" />
-                </form>
-                <p>Project Owner: Paul Ahn</p>
-            </div>
-            <div className="left-results-section">
+            <section className="title-section">
+                <h1>Project Name: {userInput.projectName}</h1>
+                <p>Project Owner: {userInput.userName}</p>
+            </section>
+
+            <section className="left-results-section">
                 <h2>Sample Completed Projects</h2>
                 <div></div>
                 <ul className="left-results-links">
@@ -16,9 +14,9 @@ const UserResult = () => {
                     <li><a href="#" target="_blank">https://www.joincolab.io/projects</a></li>
                     <li><a href="#" target="_blank">https://www.joincolab.io/projects</a></li>
                 </ul>
-            </div>
+            </section>
 
-            <div className="right-results-section">
+            <section className="right-results-section">
                 <h2>Youtube Videos</h2>
                 <ul className="right-results-links">
                     <li>
@@ -34,9 +32,9 @@ const UserResult = () => {
                         <div></div>
                     </li>
                 </ul>
-            </div>
+            </section>
 
-            <div className="bottom-results-section">
+            <section className="bottom-results-section">
                 <div className="bottom-results-links">
                     <h2>Additional Webpages</h2>
                     <ul>
@@ -46,7 +44,7 @@ const UserResult = () => {
                     </ul>
                 </div>
                 <div className="bottom-results-image"></div>
-            </div>
+            </section>
         </div>
     )
 }

@@ -1,13 +1,13 @@
-const AnswerBtnInputA = ({response, index}) => {
+const AnswerBtnInputA = ({response, index, handleSelect}) => {
     const answers = response[index];
     return(
-        <div className="answer-fill answer-group">
+        <form className="answer-fill answer-group">
             {answers.options.map((answer, index) => 
                 (
-                    <button key={index}>{answer}</button>
+                    <button value={answer} key={index} onClick={handleSelect}>{answer}</button>
                 )
             )}
-        </div>
+        </form>
     )
 }
 

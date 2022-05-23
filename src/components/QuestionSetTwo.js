@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import Navigation from "./Navigation";
 import LoadingResults from "./LoadingResults";
 import Navigator from "./Navigator";
 import AnswerFillInput from "./AnswerFillInput";
-import UserResult from "./UserResult";
 
 const QuestionSetTwo = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +21,6 @@ const QuestionSetTwo = () => {
     const answers = ['Note-taking application', 'Online Hotel Room Booking System']
 
     const navigateNext = () => {
-        // Based on question index, store answer in state
         if (userStep < 3) {
             setUserStep(userStep + 1);
         }
@@ -36,8 +33,7 @@ const QuestionSetTwo = () => {
     }
 
     return (
-        <>
-        <Navigation />        
+        <>      
         <div>
             {isLoading === true ? <LoadingResults /> : null}
         </div>
@@ -56,7 +52,7 @@ const QuestionSetTwo = () => {
                     )}
                 </div>
             </div>   
-            <Navigator next={navigateNext} back={navigateBack}/> 
+            <Navigator next={navigateNext} back={navigateBack} />
         </>
         : null}
 
@@ -66,14 +62,9 @@ const QuestionSetTwo = () => {
                 <h1>What would you like to call this new project you’ll be working on? (Be Creative!)</h1>
                 <AnswerFillInput />
             </div>   
-            <Navigator next={navigateNext} back={navigateBack}/> 
+            <Navigator next={navigateNext} back={navigateBack} userStep={userStep}/> 
         </>
         : null}
-
-        {userStep === 3 ?
-            <UserResult />
-        : null
-        }
         </>
 
     )

@@ -15,28 +15,6 @@
     justify-content: space-between;
 }
 
-.title-section {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    form {
-        width: 55%;
-        label {
-            font-size: 1.4rem;
-            font-weight: 600;
-            padding-right: 20px;
-        }
-        input {
-            border: none;
-            border-bottom: 1px solid grey;
-        }
-    }
-    p {
-        width: 35%;
-    }
-}
-
 .left-results-section {
     width: 55%;
     div {
@@ -44,7 +22,6 @@
         background-color: #e2e2e2;
     }
 }
-
 
 .right-results-section {
     width: 35%;

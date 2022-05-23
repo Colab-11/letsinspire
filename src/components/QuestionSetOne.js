@@ -1,14 +1,12 @@
-import Navigation from "./Navigation";
 import { useState } from "react";
 import AnswerFillInput from "./AnswerFillInput";
 import AnswerBtnInputA from "./AnswerBtnInputA";
 import AnswerBtnInputB from "./AnswerBtnInputB";
-import AnswerBtnInputBTooltip from "./AnswerBtnInputBTooltip";
 import Navigator from "./Navigator";
 
-function QuestionSetOne() {
+function QuestionSetOne({setUserInput}) {
     const [questionIndex, setQuestionIndex] = useState(0);
-    
+
     const questionsArr = [
         {
             question: 'What is your name?',
@@ -56,7 +54,6 @@ function QuestionSetOne() {
     ]
 
     const navigateNext = () => {
-        // Based on question index, store answer in state
         if (questionIndex < 4) {
             setQuestionIndex(questionIndex + 1);
         }
@@ -68,10 +65,30 @@ function QuestionSetOne() {
         }
     }
 
+    const handleChange = (e) => {
+        e.preventDefault();
+        const input = e.target.value;
+        if (questionIndex === 0) {
+            setUserInput(prevState => ({
+                ...prevState,
+                userName: input
+            }));
+        }
+    }
+    
+    const handleSelect = (e) => {
+        e.preventDefault();
+        const input = e.target.value;
+        if (questionIndex === 1) {
+            setUserInput(prevState => ({
+                ...prevState,
+                language: input
+            }));           
+        }
+    }
 
     return(
         <div>
-            <Navigation />
             {questionIndex <= 4 ? 
             <>
                 <div className="question-container wrapper">
@@ -79,9 +96,9 @@ function QuestionSetOne() {
                     <p>Question #{questionIndex + 1}</p>
                     <h1>{questionsArr[questionIndex].question}</h1>
                     
-                    {questionIndex === 0 ? <AnswerFillInput /> : null}
-                    {questionIndex === 1 ? <AnswerBtnInputA response={questionsArr} index={questionIndex}/> : null}  
-                    {questionIndex === 2 ? <AnswerBtnInputBTooltip response={questionsArr} index={questionIndex}/> : null}              
+                    {questionIndex === 0 ? <AnswerFillInput handleChange={handleChange}/> : null}
+                    {questionIndex === 1 ? <AnswerBtnInputA response={questionsArr} index={questionIndex} handleSelect={handleSelect}/> : null}  
+                    {questionIndex === 2 ? <AnswerBtnInputB response={questionsArr} index={questionIndex}/> : null}              
                     {questionIndex === 3 ? <AnswerBtnInputB response={questionsArr} index={questionIndex}/> : null}        
                     {questionIndex === 4 ? <AnswerBtnInputB response={questionsArr} index={questionIndex}/> : null}  
 

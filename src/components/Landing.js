@@ -1,10 +1,8 @@
-import Navigation from './Navigation';
 import { Link } from 'react-router-dom';
 
 function Landing() {
     return(
         <div className="landing-page">
-            <Navigation />
             <main className=" wrapper">
                 <div className="welcome-image"></div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 

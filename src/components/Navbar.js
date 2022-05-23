@@ -1,4 +1,4 @@
-function Navigation() {
+function Navbar() {
     return (
        <nav>
            <div className="nav-flex wrapper">
@@ -15,4 +15,4 @@ function Navigation() {
     )
 }
 
-export default Navigation;
+export default Navbar;
