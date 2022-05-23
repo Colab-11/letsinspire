@@ -12,6 +12,7 @@ function App() {
     language: "",
     interest: "",
     resource: "",
+    projectLength: "",
     projectType: "",
     projectName: ""
   });
@@ -22,7 +23,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/start" element={<QuestionSetOne userInput={userInput} setUserInput={setUserInput}/>} />
-          <Route path="/customize" element={<QuestionSetTwo userInput={userInput} setUserInput={setUserInput}/>}/>
         </Routes>
       </div>
   );

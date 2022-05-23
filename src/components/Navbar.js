@@ -8,7 +8,7 @@ function Navbar() {
                 </div>
                 <div className="user-sign-in">
                     <button className="btn-primary">Sign in</button>
-                    <button className="btn-outline">Sign up</button>
+                    <button className="btn-secondary">Sign up</button>
                 </div>
             </div>
       </nav>

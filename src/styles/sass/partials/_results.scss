@@ -40,6 +40,7 @@
     div {
         height: 300px;
         background-color: #e2e2e2;
+        border: 1px solid grey;
     }
 }
 
@@ -49,6 +50,7 @@
     div {
         height: 150px;
         background-color: #e2e2e2;
+        border: 1px solid grey;
     }
     p {
         font-size: 0.7rem;
@@ -61,7 +63,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
-    padding-bottom: 30px;
+    padding-bottom: 80px;
     .bottom-results-links {
         width: 35%;
     }
@@ -69,5 +71,20 @@
         width: 55%;
         height: 300px;
         background-color: #e2e2e2;
+        border: 1px solid grey;
     }
+}
+
+.separator-line {
+    margin-top: 20px;
+    width: 2px;
+    background-color: #e2e2e2;
+    height: 550px;
+}
+
+.separator-line-bottom {
+    height: 2px;
+    background-color: #e2e2e2;
+    width: 100%;
+    margin-bottom: 30px;
 }

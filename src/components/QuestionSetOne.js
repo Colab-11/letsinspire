@@ -2,6 +2,7 @@ import { useState } from "react";
 import AnswerFillInput from "./AnswerFillInput";
 import AnswerBtnInputA from "./AnswerBtnInputA";
 import AnswerBtnInputB from "./AnswerBtnInputB";
+import QuestionSetTwo from "./QuestionSetTwo";
 import Navigator from "./Navigator";
 
 function QuestionSetOne({userInput, setUserInput}) {
@@ -70,7 +71,28 @@ function QuestionSetOne({userInput, setUserInput}) {
             setSelectAlert(false);
         }
 
-        if (questionIndex < 4) {
+        if (questionIndex === 2 && userInput.interest === '') {
+            setSelectAlert(true);
+            return
+        } else {
+            setSelectAlert(false);
+        }
+
+        if (questionIndex === 3 && userInput.resource === '') {
+            setSelectAlert(true);
+            return
+        } else {
+            setSelectAlert(false);
+        }
+
+        if (questionIndex === 4 && userInput.projectLength === '') {
+            setSelectAlert(true);
+            return
+        } else {
+            setSelectAlert(false);
+        }
+
+         if (questionIndex < 5) {
             setQuestionIndex(questionIndex + 1);
         }
     }
@@ -118,7 +140,7 @@ function QuestionSetOne({userInput, setUserInput}) {
         if (questionIndex === 4) {
             setUserInput(prevState => ({
                 ...prevState,
-                length: input
+                projectLength: input
             }));           
         }
     }
@@ -133,15 +155,21 @@ function QuestionSetOne({userInput, setUserInput}) {
                     <h1>{questionsArr[questionIndex].question}</h1>
                     
                         {questionIndex === 0 ? <AnswerFillInput handleChange={handleChange} fillAlert={fillAlert} userInput={userInput} index={questionIndex}/> : null}
+
                         {questionIndex === 1 ? <AnswerBtnInputA response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}  
-                        {questionIndex === 2 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert} /> : null}              
+
+                        {questionIndex === 2 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert} /> : null}       
+
                         {questionIndex === 3 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}        
+
                         {questionIndex === 4 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}  
+
                 </div>
                 <Navigator next={navigateNext} back={navigateBack} index={questionIndex}/>
             </>
             : null
-            }   
+        }   
+        {questionIndex === 5 ? <QuestionSetTwo userInput={userInput} setUserInput={setUserInput}/> : null}
         </div>
     )
 }

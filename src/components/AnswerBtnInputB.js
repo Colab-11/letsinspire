@@ -1,35 +1,44 @@
-const AnswerBtnInputB = ({userInput, response, index, handleSelect}) => {
+const AnswerBtnInputB = ({userInput, response, index, handleSelect, selectAlert}) => {
     const answers = response[index];
     return(
-        <div className="answer-outline answer-one-group">
+        <>
+        {selectAlert ? <div>Please choose an option</div> : null}
             {index === 2 ? 
-            answers.options.map((answer, index) => 
-                (
-                    <button className={userInput.interest === answer ? "active" : null} key={index} value={answer} onClick={handleSelect}>{answer}</button>
-                )
-            )
+                <div className="answer-outline answer-one-group">
+                    {answers.options.map((answer, index) => 
+                        (
+                            <button className={userInput.interest === answer ? "active" : null} key={index} value={answer} onClick={handleSelect}>{answer}</button>
+                        )
+                    )
+                    }
+                </div>
             : null
             }
 
             {index === 3 ? 
-            answers.options.map((answer, index) => 
-                (
-                    <button className={userInput.resource === answer ? "active" : null} key={index} value={answer} onClick={handleSelect}>{answer}</button>
-                )
-            )
+                <div className="answer-outline answer-one-column">
+                    {answers.options.map((answer, index) => 
+                        (
+                            <button className={userInput.resource === answer ? "active" : null} key={index} value={answer} onClick={handleSelect}>{answer}</button>
+                        )
+                    )
+                    }
+                </div>
             : null
             }
 
             {index === 4 ? 
-            answers.options.map((answer, index) => 
-                (
-                    <button className={userInput.length === answer ? "active" : null} key={index} value={answer} onClick={handleSelect}>{answer}</button>
-                )
-            )
+                <div className="answer-outline answer-one-column">
+                    {answers.options.map((answer, index) => 
+                        (
+                            <button className={userInput.projectLength === answer ? "active" : null} key={index} value={answer} onClick={handleSelect}>{answer}</button>
+                        )
+                    )
+                    }
+                </div>
             : null
             }
-
-        </div>
+        </>
     )
 }
 
