@@ -8,6 +8,7 @@ const QuestionSetTwo = ({userInput, setUserInput}) => {
     const [isLoading, setIsLoading] = useState(true);
     const [userStep, setUserStep] = useState(0);
     const [fillAlert, setFillAlert] = useState(false);
+    const [selectAlert, setSelectAlert] = useState(false);
 
     const mockRequest = () => {
         setTimeout(() => {
@@ -35,12 +36,20 @@ const QuestionSetTwo = ({userInput, setUserInput}) => {
     const answers = ['Note-taking application', 'Online Hotel Room Booking System']
 
     const navigateNext = () => {
+        if (userStep === 1 && userInput.projectType === '') {
+            setSelectAlert(true);
+            return
+        } else {
+            setSelectAlert(false);
+        }
+
         if (userStep === 2 && userInput.projectName === '') {
             setFillAlert(true);
             return
         } else {
             setFillAlert(false);
         }
+
 
         if (userStep < 3) {
             setUserStep(userStep + 1);
@@ -76,6 +85,7 @@ const QuestionSetTwo = ({userInput, setUserInput}) => {
                 <p>Results</p>
                 <h1>Score! Based on your results, here are two projects that we think is right for you!</h1>
 
+                {selectAlert ? <div>Please choose an option</div> : null}
                 <div className="answer-fill answer-group">
                     {answers.map((answer, index) => 
                         (
