@@ -13,6 +13,7 @@ button {
 }
 
 .btn-secondary {
+    font-size: 0.75rem;
     color: #fff;
     background-color: $secondary;
     border-radius: 50px;
@@ -33,6 +34,9 @@ button {
 }
 
 .btn-next {
+    padding: 0px;
+    color: #fff;
+    background-color: #FF8100;
     span {
         margin-left: 10px;
     }

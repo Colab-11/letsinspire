@@ -3,8 +3,20 @@ const AnswerBtnInputB = ({userInput, response, index, handleSelect, selectAlert}
     return(
         <>
         {selectAlert ? <div>Please choose an option</div> : null}
+            {index === 1 ? 
+                <div className="answer-outline answer-one-column">
+                    {answers.options.map((answer, index) => 
+                        (
+                            <button className={userInput.language === answer ? "active" : null} key={index} value={answer} onClick={handleSelect}>{answer}</button>
+                        )
+                    )
+                    }
+                </div>
+            : null
+            }
+
             {index === 2 ? 
-                <div className="answer-outline answer-one-group">
+                <div className="answer-outline answer-one-column">
                     {answers.options.map((answer, index) => 
                         (
                             <button className={userInput.interest === answer ? "active" : null} key={index} value={answer} onClick={handleSelect}>{answer}</button>
@@ -16,18 +28,6 @@ const AnswerBtnInputB = ({userInput, response, index, handleSelect, selectAlert}
             }
 
             {index === 3 ? 
-                <div className="answer-outline answer-one-column">
-                    {answers.options.map((answer, index) => 
-                        (
-                            <button className={userInput.resource === answer ? "active" : null} key={index} value={answer} onClick={handleSelect}>{answer}</button>
-                        )
-                    )
-                    }
-                </div>
-            : null
-            }
-
-            {index === 4 ? 
                 <div className="answer-outline answer-one-column">
                     {answers.options.map((answer, index) => 
                         (

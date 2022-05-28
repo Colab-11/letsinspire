@@ -3,6 +3,7 @@ import LoadingResults from "./LoadingResults";
 import Navigator from "./Navigator";
 import AnswerFillInput from "./AnswerFillInput";
 import UserResult from "./UserResult";
+import { Link } from "react-router-dom";
 
 const QuestionSetTwo = ({userInput, setUserInput}) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -33,7 +34,7 @@ const QuestionSetTwo = ({userInput, setUserInput}) => {
             mockRequest();
     }
 
-    const answers = ['Note-taking application', 'Online Hotel Room Booking System']
+    const answers = ['Project #1', 'Project #2']
 
     const navigateNext = () => {
         if (userStep === 1 && userInput.projectType === '') {
@@ -107,12 +108,6 @@ const QuestionSetTwo = ({userInput, setUserInput}) => {
             <Navigator next={navigateNext} back={navigateBack} userStep={userStep}/> 
         </>
         : null}
-
-        {userStep === 3 ?
-        <div className="btn-primary-link btn-next">
-            <UserResult userInput={userInput}/>
-        </div>
-        : null }
         </>
     )
 }

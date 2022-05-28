@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightLong, faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 const Navigator = ({next, back, index, userStep}) => {
     const faNext = <FontAwesomeIcon icon={faArrowRightLong} />
@@ -14,8 +15,15 @@ const Navigator = ({next, back, index, userStep}) => {
             : null
             }
 
-            {userStep ?
+            {userStep === 1 ?
                 <button className="btn-primary btn-next" onClick={next}>Next <span>{faNext}</span></button>
+            : null
+            }
+
+            {userStep === 2 ?
+                <div className="btn-primary-link btn-next">
+                    <Link to="/result">Next <span>{faNext}</span></Link>
+                </div>
             : null
             }
         </div>

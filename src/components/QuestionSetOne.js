@@ -19,30 +19,16 @@ function QuestionSetOne({userInput, setUserInput}) {
             question: 'What programming language are you most interested in?',
             options: [
                 'JavaScript',
-                'Python',
-                'C#',
-                'Ruby'
+                'Python'
             ]
         },
         {
             question: 'What industry are you most interested in working in?',
             options: [
-                'B2B Software and Services',
-                'Retail',
-                'Gaming',
+                'FinTech',
                 'Healthcare',
-                'Education',
-                'Business / IT',
-                'Government'
-            ]
-        },
-        {
-            question: 'What resources would you like to see to facilitate building your project?',
-            options: [
-                'YouTube Videos',
-                'Completed Project Samples',
-                'Links to Relevant Courses',
-                'Links to Relevant Websites'
+                'Gaming',
+                'Education'
             ]
         },
         {
@@ -78,21 +64,14 @@ function QuestionSetOne({userInput, setUserInput}) {
             setSelectAlert(false);
         }
 
-        if (questionIndex === 3 && userInput.resource === '') {
+        if (questionIndex === 3 && userInput.projectLength === '') {
             setSelectAlert(true);
             return
         } else {
             setSelectAlert(false);
         }
 
-        if (questionIndex === 4 && userInput.projectLength === '') {
-            setSelectAlert(true);
-            return
-        } else {
-            setSelectAlert(false);
-        }
-
-         if (questionIndex < 5) {
+         if (questionIndex < 4) {
             setQuestionIndex(questionIndex + 1);
         }
     }
@@ -134,12 +113,6 @@ function QuestionSetOne({userInput, setUserInput}) {
         if (questionIndex === 3) {
             setUserInput(prevState => ({
                 ...prevState,
-                resource: input
-            }));           
-        }
-        if (questionIndex === 4) {
-            setUserInput(prevState => ({
-                ...prevState,
                 projectLength: input
             }));           
         }
@@ -147,7 +120,7 @@ function QuestionSetOne({userInput, setUserInput}) {
 
     return(
         <div>
-            {questionIndex <= 4 ? 
+            {questionIndex <= 3 ? 
             <>
                 <div className="question-container wrapper">
 
@@ -156,20 +129,18 @@ function QuestionSetOne({userInput, setUserInput}) {
                     
                         {questionIndex === 0 ? <AnswerFillInput handleChange={handleChange} fillAlert={fillAlert} userInput={userInput} index={questionIndex}/> : null}
 
-                        {questionIndex === 1 ? <AnswerBtnInputA response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}  
+                        {questionIndex === 1 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}  
 
                         {questionIndex === 2 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert} /> : null}       
 
-                        {questionIndex === 3 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}        
-
-                        {questionIndex === 4 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}  
+                        {questionIndex === 3 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}          
 
                 </div>
                 <Navigator next={navigateNext} back={navigateBack} index={questionIndex}/>
             </>
             : null
         }   
-        {questionIndex === 5 ? <QuestionSetTwo userInput={userInput} setUserInput={setUserInput}/> : null}
+        {questionIndex === 4 ? <QuestionSetTwo userInput={userInput} setUserInput={setUserInput}/> : null}
         </div>
     )
 }
