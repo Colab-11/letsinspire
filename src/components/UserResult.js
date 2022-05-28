@@ -8,6 +8,9 @@ const UserResult = ({userInput}) => {
                     <h1>Project Name: {userInput.projectName}</h1>
                     <p>Project Owner: {userInput.userName}</p>
                 </section>
+                <section className="field-section">
+                    <p>Field of Interest: {userInput.interest}</p>
+                </section>
                 <section className="left-results-section">
                     <h2>Sample Completed Projects</h2>
                     <div></div>

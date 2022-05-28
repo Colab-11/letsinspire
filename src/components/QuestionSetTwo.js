@@ -1,9 +1,8 @@
 import { useState } from "react";
 import LoadingResults from "./LoadingResults";
 import Navigator from "./Navigator";
+import AnswerBtnInputA from "./AnswerBtnInputA";
 import AnswerFillInput from "./AnswerFillInput";
-import UserResult from "./UserResult";
-import { Link } from "react-router-dom";
 
 const QuestionSetTwo = ({userInput, setUserInput}) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -34,7 +33,14 @@ const QuestionSetTwo = ({userInput, setUserInput}) => {
             mockRequest();
     }
 
-    const answers = ['Project #1', 'Project #2']
+    const questionsArr = [
+        {   
+            options: null
+        },
+        {
+            options: ['Project #1', 'Project #2']
+        }
+    ]
 
     const navigateNext = () => {
         if (userStep === 1 && userInput.projectType === '') {
@@ -87,13 +93,9 @@ const QuestionSetTwo = ({userInput, setUserInput}) => {
                 <h1>Score! Based on your results, here are two projects that we think is right for you!</h1>
 
                 {selectAlert ? <div>Please choose an option</div> : null}
-                <div className="answer-fill answer-group">
-                    {answers.map((answer, index) => 
-                        (
-                            <button key={index} className={userInput.projectType === answer ? "active" : null} onClick={handleSelect} value={answer}>{answer}</button>
-                        )
-                    )}
-                </div>
+                
+                <AnswerBtnInputA userStep={userStep} response={questionsArr} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/>
+
             </div>   
             <Navigator next={navigateNext} back={navigateBack} userStep={userStep}/>
         </>

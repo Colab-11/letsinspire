@@ -18,15 +18,8 @@
     }
 }
 
-.loading-results {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #efefef;
-    height: 50vh;
-    h1 {
-        font-weight: 600;
-    }
+.field-section {
+    width: 100%;
 }
 
 .user-container {

@@ -1,15 +1,18 @@
-const AnswerBtnInputA = ({response, index, userInput, handleSelect, selectAlert}) => {
-    const answers = response[index];
+const AnswerBtnInputA = ({userStep, response, userInput, handleSelect, selectAlert}) => {
+    const answers = response[userStep];
     return(
         <>
         {selectAlert ? <div>Please choose an option</div> : null}
-        <div className="answer-fill answer-group">
-            {answers.options.map((answer, index) => 
-                (
-                    <button className={userInput.language === answer ? "active" : null} value={answer} key={index} onClick={handleSelect}>{answer}</button>
-                )
-            )}
-        </div>
+        {userStep === 1 ? 
+            <div className="answer-fill answer-group">
+                {answers.options.map((answer, index) => 
+                    (
+                        <button className={userInput.projectType === answer ? "active" : null} value={answer} key={index} onClick={handleSelect}>{answer}</button>
+                    )
+                )}
+            </div>
+        : null
+        }
         </>
     )
 }

@@ -289,7 +289,7 @@ button {
 }
 
 nav {
-  height: 20vh;
+  height: 15vh;
   padding: 10px 0;
 }
 
@@ -318,6 +318,7 @@ nav {
 }
 
 .question-container {
+  padding-top: 10px;
   text-align: center;
 }
 
@@ -421,15 +422,8 @@ nav {
   font-size: 0.9rem;
 }
 
-.loading-results {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #efefef;
-  height: 50vh;
-}
-.loading-results h1 {
-  font-weight: 600;
+.field-section {
+  width: 100%;
 }
 
 .user-container {
@@ -547,7 +541,7 @@ a {
 
 .welcome-image {
   background-image: url(../../assets/hero_image.png);
-  height: 300px;
+  height: 500px;
   width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -556,13 +550,21 @@ a {
 
 .welcome-image ~ p {
   text-align: center;
+  font-size: 0.75rem;
   width: 70%;
-  margin: 50px auto;
+  margin: 30px auto;
 }
 
 .loading-results {
+  margin-top: 30px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: #efefef;
+  height: 50vh;
+}
+.loading-results h1 {
+  font-weight: 600;
 }
 
 .spinner {

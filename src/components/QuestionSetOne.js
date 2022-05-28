@@ -1,6 +1,5 @@
 import { useState } from "react";
 import AnswerFillInput from "./AnswerFillInput";
-import AnswerBtnInputA from "./AnswerBtnInputA";
 import AnswerBtnInputB from "./AnswerBtnInputB";
 import QuestionSetTwo from "./QuestionSetTwo";
 import Navigator from "./Navigator";
@@ -119,7 +118,7 @@ function QuestionSetOne({userInput, setUserInput}) {
     }
 
     return(
-        <div>
+        <div className="question-container-flex">
             {questionIndex <= 3 ? 
             <>
                 <div className="question-container wrapper">
