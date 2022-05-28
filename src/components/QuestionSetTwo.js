@@ -91,8 +91,6 @@ const QuestionSetTwo = ({userInput, setUserInput}) => {
             <div className="question-container wrapper">
                 <p>Results</p>
                 <h1>Score! Based on your results, here are two projects that we think is right for you!</h1>
-
-                {selectAlert ? <div>Please choose an option</div> : null}
                 
                 <AnswerBtnInputA userStep={userStep} response={questionsArr} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/>
 
