@@ -241,15 +241,17 @@ button {
 }
 
 .btn-primary {
-  background-color: #074EE8;
-  border: 1.5px solid #074EE8;
-  color: #fff;
+  background-color: transparent;
+  color: #000000;
 }
 
 .btn-secondary {
-  border: 1.5px solid #074EE8;
-  color: #074EE8;
-  background-color: transparent;
+  color: #fff;
+  background-color: #000000;
+  border-radius: 50px;
+  padding: 12px 35px;
+  font-weight: 500;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15), 0px 2px 15px rgba(0, 0, 0, 0.15);
 }
 
 .btn-primary-link a {
@@ -257,16 +259,19 @@ button {
   color: #fff;
   border-radius: 4px;
   padding: 10px 30px;
-  background-color: #074EE8;
+  background-color: #FF8100;
 }
 
 .btn-next span {
-  padding-left: 2px;
+  margin-left: 10px;
 }
 
 .btn-back {
-  color: grey;
+  color: #C4C4C4;
   background-color: transparent;
+}
+.btn-back span {
+  margin-right: 10px;
 }
 
 nav {
@@ -283,10 +288,11 @@ nav {
 .brand .logo {
   font-size: 1.4rem;
   font-weight: 600;
-  text-transform: uppercase;
   margin: 1rem 0 0 0;
+  border-bottom: 1px solid #000000;
 }
-.brand p {
+.brand .logo ~ p {
+  margin-top: 10px;
   font-size: 0.8rem;
 }
 
@@ -303,6 +309,7 @@ nav {
   width: 50%;
   padding: 18px;
   border-bottom: 1px solid grey;
+  background-color: transparent;
 }
 
 .nav-btn {
@@ -378,7 +385,7 @@ nav {
 
 .user-container a {
   padding: 0px;
-  color: #074EE8;
+  color: #FF8100;
   background-color: transparent;
 }
 
@@ -471,6 +478,8 @@ html {
 
 body {
   font-family: "Poppins";
+  background-color: #FFFAF5;
+  line-height: 1.7;
 }
 
 h1 {
@@ -516,7 +525,7 @@ a {
 }
 
 .welcome-image {
-  background-image: url(../../assets/undraw_placeholder.png);
+  background-image: url(../../assets/hero_image.png);
   height: 300px;
   width: 100%;
   background-repeat: no-repeat;
@@ -525,7 +534,6 @@ a {
 }
 
 .welcome-image ~ p {
-  line-height: 1.5;
   text-align: center;
   width: 70%;
   margin: 50px auto;
@@ -566,7 +574,7 @@ a {
 }
 footer {
   padding: 20px 0;
-  background-color: #E5E5E5;
+  background-color: #FFFAF5;
 }
 footer > div:nth-of-type(1) {
   display: flex;

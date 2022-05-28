@@ -1,5 +1,7 @@
-$primary-color: #074EE8;
-$secondary-color: #E5E5E5;
+$primary: #FF8100;
+$secondary: #000000;
+$primary-light: #FFFAF5;
+$neutral-light: #C4C4C4;
 
 @import './partials/setup';
 @import './partials/button';
@@ -17,6 +19,8 @@ html {
 
 body {
     font-family: 'Poppins';
+    background-color: $primary-light;
+    line-height: 1.7;
 }
 
 h1 {
@@ -62,7 +66,7 @@ a {
 }
 
 .welcome-image {
-    background-image: url(../../assets/undraw_placeholder.png);
+    background-image: url(../../assets/hero_image.png);
     height: 300px;
     width: 100%;
     background-repeat: no-repeat;
@@ -71,7 +75,6 @@ a {
 }
 
 .welcome-image ~ p {
-    line-height: 1.5;
     text-align: center;
     width: 70%;
     margin: 50px auto;
@@ -113,7 +116,7 @@ a {
 
   footer {
       padding: 20px 0;
-      background-color: $secondary-color;
+      background-color: $primary-light;
       > div:nth-of-type(1) {
           display: flex;
           flex-direction: row;
