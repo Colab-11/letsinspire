@@ -35,9 +35,7 @@ const Navigator = ({next, back, index, userStep}) => {
             {userStep === 2 ?
                 <>
                     <button className="btn-back" onClick={back}><span>{faBack}</span> Previous</button>                      
-                    <div className="btn-primary-link btn-next">
-                        <Link to="/result">Next <span>{faNext}</span></Link>
-                    </div>
+                    <button className="btn-primary btn-next" onClick={next}>Next <span>{faNext}</span></button>
                 </>
             : null
             }

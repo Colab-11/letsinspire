@@ -3,6 +3,7 @@ import LoadingResults from "./LoadingResults";
 import Navigator from "./Navigator";
 import AnswerBtnInputA from "./AnswerBtnInputA";
 import AnswerFillInput from "./AnswerFillInput";
+import UserResult from "./UserResult";
 
 const QuestionSetTwo = ({userInput, setUserInput}) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -108,6 +109,11 @@ const QuestionSetTwo = ({userInput, setUserInput}) => {
             <Navigator next={navigateNext} back={navigateBack} userStep={userStep}/> 
         </>
         : null}
+
+        {userStep === 3 ?
+            <UserResult userInput={userInput}/>
+        : null
+        }
         </>
     )
 }
