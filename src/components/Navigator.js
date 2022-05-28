@@ -8,22 +8,37 @@ const Navigator = ({next, back, index, userStep}) => {
 
     return (
         <div className="nav-btn">
-            <button className="btn-back" onClick={back}><span>{faBack}</span> Previous</button>
+            
+            {index === 0 ? 
+                <>
+                    <Link to="/" className="btn-back-link"><span>{faBack}</span> Previous</Link>
+                    <button className="btn-primary btn-next" onClick={next}>Next <span>{faNext}</span></button>
+                </>
+            : null }
 
-            {index <= 4 ?
-                <button className="btn-primary btn-next" onClick={next}>Next <span>{faNext}</span></button>
+            {index > 0 ?
+                <>
+                    <button className="btn-back" onClick={back}><span>{faBack}</span> Previous</button>            
+                    <button className="btn-primary btn-next" onClick={next}>Next <span>{faNext}</span></button>
+                </>
             : null
             }
 
             {userStep === 1 ?
-                <button className="btn-primary btn-next" onClick={next}>Next <span>{faNext}</span></button>
+                <>
+                    <button className="btn-back" onClick={back}><span>{faBack}</span> Previous</button>                      
+                    <button className="btn-primary btn-next" onClick={next}>Next <span>{faNext}</span></button>
+                </>
             : null
             }
 
             {userStep === 2 ?
-                <div className="btn-primary-link btn-next">
-                    <Link to="/result">Next <span>{faNext}</span></Link>
-                </div>
+                <>
+                    <button className="btn-back" onClick={back}><span>{faBack}</span> Previous</button>                      
+                    <div className="btn-primary-link btn-next">
+                        <Link to="/result">Next <span>{faNext}</span></Link>
+                    </div>
+                </>
             : null
             }
         </div>

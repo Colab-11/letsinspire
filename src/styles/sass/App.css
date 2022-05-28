@@ -280,6 +280,14 @@ button {
   margin-right: 10px;
 }
 
+.btn-back-link {
+  color: #C4C4C4;
+  font-size: 0.8rem;
+}
+.btn-back-link span {
+  margin-right: 10px;
+}
+
 nav {
   height: 20vh;
   padding: 10px 0;
@@ -291,6 +299,9 @@ nav {
   align-items: center;
 }
 
+.brand {
+  color: #000;
+}
 .brand .logo {
   font-size: 1.2rem;
   font-weight: 600;
