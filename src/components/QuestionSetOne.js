@@ -3,6 +3,7 @@ import AnswerFillInput from "./AnswerFillInput";
 import AnswerBtnInputB from "./AnswerBtnInputB";
 import QuestionSetTwo from "./QuestionSetTwo";
 import Navigator from "./Navigator";
+import Progress from "./Progress";
 
 function QuestionSetOne({userInput, setUserInput}) {
     const [questionIndex, setQuestionIndex] = useState(0);
@@ -122,9 +123,9 @@ function QuestionSetOne({userInput, setUserInput}) {
             {questionIndex <= 3 ? 
             <>
                 <div className="question-container wrapper">
-
                     <p>Question #{questionIndex + 1}</p>
                     <h1>{questionsArr[questionIndex].question}</h1>
+                    <Progress step={questionIndex}/>
                     
                         {questionIndex === 0 ? <AnswerFillInput handleChange={handleChange} fillAlert={fillAlert} userInput={userInput} index={questionIndex}/> : null}
 

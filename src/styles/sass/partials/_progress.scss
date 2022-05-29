@@ -1,0 +1,20 @@
+.progress {
+    display: flex;
+    column-gap: 15px;
+    div {
+        display: block;
+        height: 16px;
+        width: 16px;
+        border: 3px solid $neutral-light;
+        border-radius: 50%;
+    }
+    .step-complete {
+        background-color: $primary;
+        border: 3px solid $primary;
+    }
+}
+
+.prog-container {
+    display: flex;
+    justify-content: center;
+}
