@@ -1,6 +1,9 @@
 .question-container {
     padding-top: 10px;
     text-align: center;
+    h1:first-child {
+        padding-top: 40px;
+    }
 }
 
 .name-input {

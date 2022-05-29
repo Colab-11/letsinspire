@@ -4,12 +4,14 @@ import Navigator from "./Navigator";
 import AnswerBtnInputA from "./AnswerBtnInputA";
 import AnswerFillInput from "./AnswerFillInput";
 import UserResult from "./UserResult";
+import QuestionSetOne from "./QuestionSetOne";
 
-const QuestionSetTwo = ({userInput, setUserInput, setComplete}) => {
+const QuestionSetTwo = ({userInput, setUserInput, setIndex, setComplete}) => {
     const [isLoading, setIsLoading] = useState(true);
     const [userStep, setUserStep] = useState(0);
     const [fillAlert, setFillAlert] = useState(false);
     const [selectAlert, setSelectAlert] = useState(false);
+    const [Back, setBack] = useState(false);
 
     const mockRequest = () => {
         setTimeout(() => {
@@ -68,6 +70,11 @@ const QuestionSetTwo = ({userInput, setUserInput, setComplete}) => {
         if (userStep > 1) {
             setUserStep(userStep - 1);
         }
+        if (userStep === 1) {
+            setBack(true);
+            setIndex(3);
+            setComplete(false);
+        }
     }
 
     const handleSelect = (e) => {
@@ -86,7 +93,10 @@ const QuestionSetTwo = ({userInput, setUserInput, setComplete}) => {
         <div>
             {isLoading === true ? <LoadingResults /> : null}
         </div>
-        
+        {Back === true ? 
+            <QuestionSetOne />
+            : null
+        }
         {userStep === 1 ? 
         <>
             <div className="question-container wrapper">

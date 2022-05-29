@@ -145,7 +145,7 @@ function QuestionSetOne({userInput, setUserInput}) {
             </>
             : null
         }   
-        {questionIndex === 4 ? <QuestionSetTwo userInput={userInput} setUserInput={setUserInput} setComplete={setComplete}/> : null}
+        {questionIndex === 4 ? <QuestionSetTwo userInput={userInput} setUserInput={setUserInput} setComplete={setComplete} setIndex={setQuestionIndex}/> : null}
         </div>
     )
 }

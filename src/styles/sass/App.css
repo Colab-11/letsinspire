@@ -321,6 +321,9 @@ nav {
   padding-top: 10px;
   text-align: center;
 }
+.question-container h1:first-child {
+  padding-top: 40px;
+}
 
 .name-input {
   border: none;
