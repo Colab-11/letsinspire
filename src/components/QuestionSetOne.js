@@ -9,6 +9,7 @@ function QuestionSetOne({userInput, setUserInput}) {
     const [questionIndex, setQuestionIndex] = useState(0);
     const [fillAlert, setFillAlert] = useState(false);
     const [selectAlert, setSelectAlert] = useState(false);
+    const [complete, setComplete] = useState(false);
 
     const questionsArr = [
         {
@@ -71,8 +72,12 @@ function QuestionSetOne({userInput, setUserInput}) {
             setSelectAlert(false);
         }
 
-         if (questionIndex < 4) {
+        if (questionIndex < 3) {
             setQuestionIndex(questionIndex + 1);
+        }
+        if (questionIndex === 3) {
+            setComplete(true);
+            setTimeout(() => setQuestionIndex(questionIndex + 1), 1000);
         }
     }
 
@@ -125,7 +130,7 @@ function QuestionSetOne({userInput, setUserInput}) {
                 <div className="question-container wrapper">
                     <p>Question #{questionIndex + 1}</p>
                     <h1>{questionsArr[questionIndex].question}</h1>
-                    <Progress step={questionIndex}/>
+                    <Progress step={questionIndex} complete={complete}/>
                     
                         {questionIndex === 0 ? <AnswerFillInput handleChange={handleChange} fillAlert={fillAlert} userInput={userInput} index={questionIndex}/> : null}
 
@@ -140,7 +145,7 @@ function QuestionSetOne({userInput, setUserInput}) {
             </>
             : null
         }   
-        {questionIndex === 4 ? <QuestionSetTwo userInput={userInput} setUserInput={setUserInput}/> : null}
+        {questionIndex === 4 ? <QuestionSetTwo userInput={userInput} setUserInput={setUserInput} setComplete={setComplete}/> : null}
         </div>
     )
 }

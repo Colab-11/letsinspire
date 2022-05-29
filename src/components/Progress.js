@@ -1,4 +1,4 @@
-const Progress = ({step}) => {
+const Progress = ({step, complete}) => {
     return(
 
         <div className="prog-container">
@@ -30,15 +30,30 @@ const Progress = ({step}) => {
                     </>
                     : null
                 }
-                {step === 3 ? 
+                {step === 3 ? complete === false ?
                     <>
                         <div className="step-complete"></div>
                         <div className="step-complete"></div>
                         <div className="step-complete"></div>
                         <div className="step"></div>
+                    </> : 
+                    <>
+                        <div className="step-complete"></div>
+                        <div className="step-complete"></div>
+                        <div className="step-complete"></div>
+                        <div className="step-complete"></div>
                     </>
                     : null
                 }
+                {/* {step === 3 ? complete === true ?
+                    <>
+                        <div className="step-complete"></div>
+                        <div className="step-complete"></div>
+                        <div className="step-complete"></div>
+                        <div className="step-complete"></div>
+                    </> : null
+                : null
+                } */}
             </div>            
         </div>
 

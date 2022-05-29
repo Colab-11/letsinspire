@@ -497,8 +497,8 @@ nav {
 }
 .progress div {
   display: block;
-  height: 16px;
-  width: 16px;
+  height: 13px;
+  width: 13px;
   border: 3px solid #C4C4C4;
   border-radius: 50%;
 }

@@ -5,7 +5,7 @@ import AnswerBtnInputA from "./AnswerBtnInputA";
 import AnswerFillInput from "./AnswerFillInput";
 import UserResult from "./UserResult";
 
-const QuestionSetTwo = ({userInput, setUserInput}) => {
+const QuestionSetTwo = ({userInput, setUserInput, setComplete}) => {
     const [isLoading, setIsLoading] = useState(true);
     const [userStep, setUserStep] = useState(0);
     const [fillAlert, setFillAlert] = useState(false);
