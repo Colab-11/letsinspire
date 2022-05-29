@@ -2,7 +2,7 @@ const AnswerBtnInputB = ({userInput, response, index, handleSelect, selectAlert}
     const answers = response[index];
     return(
         <>
-        {selectAlert ? <div>Please choose an option</div> : null}
+            {selectAlert ? <div className="select-alert">Please choose an option</div> : null}
             {index === 1 ? 
                 <div className="answer-outline answer-one-column">
                     {answers.options.map((answer, index) => 
