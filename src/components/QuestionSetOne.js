@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AnswerFillInput from "./AnswerFillInput";
 import AnswerBtnInputB from "./AnswerBtnInputB";
-import QuestionSetTwo from "./QuestionSetTwo";
+import LoadingResults from "./LoadingResults";
 import Navigator from "./Navigator";
 import Progress from "./Progress";
 
@@ -145,7 +145,9 @@ function QuestionSetOne({userInput, setUserInput}) {
             </>
             : null
         }   
-        {questionIndex === 4 ? <QuestionSetTwo userInput={userInput} setUserInput={setUserInput} setComplete={setComplete} setIndex={setQuestionIndex}/> : null}
+        {questionIndex === 4 
+            ? <LoadingResults />
+            : null}
         </div>
     )
 }
