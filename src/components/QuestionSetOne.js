@@ -28,7 +28,7 @@ function QuestionSetOne({userInput, setUserInput}) {
             options: [
                 'FinTech',
                 'Healthcare',
-                'Gaming',
+                'E-Commerce',
                 'Education'
             ]
         },
@@ -77,7 +77,7 @@ function QuestionSetOne({userInput, setUserInput}) {
         }
         if (questionIndex === 3) {
             setComplete(true);
-            setTimeout(() => setQuestionIndex(questionIndex + 1), 1000);
+            setTimeout(() => setQuestionIndex(questionIndex + 1), 200);
         }
     }
 
@@ -123,6 +123,14 @@ function QuestionSetOne({userInput, setUserInput}) {
         }
     }
 
+    const handleKeyPress = (e) => {
+        if (e.keyCode === 13) {
+            navigateNext();
+        }
+    }
+
+    document.addEventListener("keydown", handleKeyPress);
+
     return(
         <div className="question-container-flex">
             {questionIndex <= 3 ? 
@@ -146,7 +154,7 @@ function QuestionSetOne({userInput, setUserInput}) {
             : null
         }   
         {questionIndex === 4 
-            ? <LoadingResults />
+            ? <LoadingResults userInput={userInput}/>
             : null}
         </div>
     )

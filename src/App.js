@@ -22,8 +22,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/start" element={<QuestionSetOne userInput={userInput} setUserInput={setUserInput}/>} />
-          <Route path="/result" element={<UserResult userInput={userInput}/>} />
+          <Route path="/customize" element={<QuestionSetOne userInput={userInput} setUserInput={setUserInput} />} />
         </Routes>
       </div>
   );

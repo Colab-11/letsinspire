@@ -1,54 +1,103 @@
 import Footer from "./Footer";
+import { useState, useEffect } from "react";
 
-const UserResult = ({userInput}) => {
+const UserResult = ({userInput, result}) => {
+    const [ideas, setIdeas] = useState([]);
+    const [videos, setVideos] = useState([]);
+    const [techResource, setTechResource] = useState([]);
+    const [forum, setForum] = useState([]);
+
+    useEffect(() => {
+        createResults();
+    }, []);
+
+    const createResults = () => {
+        let field = '';
+        if (userInput.interest === 'FinTech') {
+            field = 'finTech';
+        } else if (userInput.interest === 'Healthcare') {
+            field = 'healthcare';
+        } else if (userInput.interest === 'E-Commerce') {
+            field = 'eCommerce';
+        } else if (userInput.interest === 'Education') {
+            field = 'education';
+        }
+        const ideas = result.filter((object) => 
+            object.resourceSubsection === field
+        )
+        setIdeas(ideas);
+
+        const videos = result.filter((object) => 
+            object.resourceSubsection === 'youtubeVideo'
+        )
+        setVideos(videos);
+
+        const techResource = result.filter((object) => 
+            object.resourceSubsection === 'techDocumentation'
+        )
+        setTechResource(techResource);
+
+        const forum = result.filter((object) => 
+            object.resourceSubsection === 'forum'
+    )
+        setForum(forum);
+    }
+
     return (
         <>
             <div className="user-container wrapper">
                 <section className="title-section">
-                    <h1>Project Name: {userInput.projectName}</h1>
+                    <h1>JavaScript: {userInput.language}</h1>
                     <p>Project Owner: {userInput.userName}</p>
                 </section>
                 <section className="field-section">
                     <p>Field of Interest: {userInput.interest}</p>
                 </section>
                 <section className="left-results-section">
-                    <h2>Sample Completed Projects</h2>
+                    <h2>Recommended Projects</h2>
                     <div></div>
                     <ul className="left-results-links">
-                        <li><a href="https://www.joincolab.io/projects" target="_blank" rel="noreferrer">https://www.joincolab.io/projects</a></li>
-                        <li><a href="https://www.joincolab.io/projects" target="_blank" rel="noreferrer">https://www.joincolab.io/projects</a></li>
-                        <li><a href="https://www.joincolab.io/projects" target="_blank" rel="noreferrer">https://www.joincolab.io/projects</a></li>
+                        <p>{userInput.interest}</p>
+                        {ideas.map((object, index) => {
+                            return(
+                                <li key={index}><a href={object.link} target="_blank" rel="noreferrer">{object.resourceTitle}</a></li>
+                            )
+                        })}
                     </ul>
                 </section>
                 <div className="separator-line"></div>
                 <section className="right-results-section">
-                    <h2>Youtube Videos</h2>
+                    <h2>Additional Projects</h2>
                     <ul className="right-results-links">
-                        <li>
-                            <p>C# Note-taking application tutorial</p>
-                            <div></div>
-                        </li>
-                        <li>
-                            <p>C# Note-taking application tutorial</p>
-                            <div></div>
-                        </li>
-                        <li>
-                            <p>C# Note-taking application tutorial</p>
-                            <div></div>
-                        </li>
+                        {videos.map((object, index) => {
+                            return(
+                                <li key={index}><a href={object.link} target="_blank" rel="noreferrer">{object.resourceTitle}</a></li>
+                            )
+                        })}
                     </ul>
                 </section>
                 <div className="separator-line-bottom"></div>
                 <section className="bottom-results-section">
                     <div className="bottom-results-links">
-                        <h2>Additional Webpages</h2>
+                        <h2>Technical Resources</h2>
+                        <p>{userInput.language} Documentation</p>
                         <ul>
-                            <li><a href="https://www.joincolab.io/projects" target="_blank" rel="noreferrer">https://www.joincolab.io/projects</a></li>
-                            <li><a href="https://www.joincolab.io/projects" target="_blank" rel="noreferrer">https://www.joincolab.io/projects</a></li>
-                            <li><a href="https://www.joincolab.io/projects" target="_blank" rel="noreferrer">https://www.joincolab.io/projects</a></li>
+                            {techResource.map((object, index) => {
+                                return(
+                                    <li key={index}><a href={object.link} target="_blank" rel="noreferrer">{object.resourceTitle}</a></li>
+                                )
+                            })}
                         </ul>
+                        <p>{userInput.language} Developer Forums</p>
+                        <ul>
+                        {forum.map((object, index) => {
+                            return(
+                                <li key={index}><a href={object.link} target="_blank" rel="noreferrer">{object.resourceTitle}</a></li>
+                            )
+                        })}
+                    </ul>
                     </div>
-                    <div className="bottom-results-image"></div>
+                    {/* <div className="bottom-results-image"></div> */}
                 </section>
             </div>
             <Footer />

@@ -589,13 +589,43 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #efefef;
   height: 50vh;
 }
 .loading-results h1 {
   font-weight: 600;
 }
 
+.load-icon {
+  transform: scale(1.5);
+}
+
+.load-icon svg {
+  height: 20px;
+  width: 20px;
+  margin-left: 20px;
+  transform: rotate(90deg);
+  transform-origin: 10px;
+  -webkit-animation: rotate 2s infinite ease-in-out;
+          animation: rotate 2s infinite ease-in-out;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .spinner {
   width: 40px;
   height: 40px;
