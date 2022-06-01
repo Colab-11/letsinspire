@@ -5,9 +5,14 @@ const LoadingResults = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        setTimeout(() => {
+        fetch('http://localhost:3000/api/projectResources?lang=javascript')
+        .then((res) => {
+            return res.json();
+        }).then((data) => {
+            console.log(data);
+        })
+
             setIsLoading(false);
-        }, 1000) 
     }, [])
 
     return (
