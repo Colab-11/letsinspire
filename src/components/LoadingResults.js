@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from "react";
-import { Navigate } from 'react-router-dom';
 import UserResult from './UserResult';
 
 const LoadingResults = ({userInput}) => {

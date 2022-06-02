@@ -53,17 +53,20 @@ const UserResult = ({userInput, result}) => {
 
     return (
         <>
+            <section className="hero-text">
+                <div className="wrapper">
+                    <div className="description">
+                        <p>Thanks for using our app <span>{userInput.userName}</span></p>
+                        <p>Below you will find the resources we curated for you to help start your personal project. Good luck and we hope that this encourages you to pursue your passions!</p>
+                        <p className="user-pick">Your Language: {userInput.language}</p>
+                        <p className="user-pick">Field of Interest: {userInput.interest}</p>
+                    </div>
+                    <div className="result-image"></div>
+                </div>
+            </section>
             <div className="user-container wrapper">
-                <section className="title-section">
-                    <h1>JavaScript: {userInput.language}</h1>
-                    <p>Project Owner: {userInput.userName}</p>
-                </section>
-                <section className="field-section">
-                    <p>Field of Interest: {userInput.interest}</p>
-                </section>
                 <section className="left-results-section">
                     <h2>Recommended Projects</h2>
-                    <div></div>
                     <ul className="left-results-links">
                         <p>{userInput.interest}</p>
                         {ideas.map((object, index) => {
@@ -72,23 +75,7 @@ const UserResult = ({userInput, result}) => {
                             )
                         })}
                     </ul>
-                </section>
-                <div className="separator-line"></div>
-                <section className="right-results-section">
-                    <h2>Additional Projects</h2>
-                    <ul className="right-results-links">
-                        {videos.map((value, index) => {
-                            return(
-                                <li className={index}>
-                                    <p>{value.resourceTitle}</p>
-                                    <iframe width="350" height="215" src={"https://www.youtube.com/embed/" + value.link} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </li>
-                            )
-                        })}
-                    </ul>
-                </section>
-                <div className="separator-line-bottom"></div>
-                <section className="bottom-results-section">
+                    <div className="separator-line-bottom"></div>
                     <div className="bottom-results-links">
                         <h2>Technical Resources</h2>
                         <p>{userInput.language} Documentation</p>
@@ -108,6 +95,21 @@ const UserResult = ({userInput, result}) => {
                         })}
                     </ul>
                     </div>
+                </section>
+                
+                <div className="separator-line"></div>
+                <section className="right-results-section">
+                    <h2>Additional Projects</h2>
+                    <ul className="right-results-links">
+                        {videos.map((value, index) => {
+                            return(
+                                <li className={index}>
+                                    <p>{value.resourceTitle}</p>
+                                    <iframe width="350" height="215" src={"https://www.youtube.com/embed/" + value.link} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </li>
+                            )
+                        })}
+                    </ul>
                 </section>
             </div>
             <Footer />
