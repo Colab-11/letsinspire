@@ -8,40 +8,48 @@ const UserResult = ({userInput, result}) => {
     const [forum, setForum] = useState([]);
 
     useEffect(() => {
-        createResults();
-    }, []);
-
-    const createResults = () => {
-        let field = '';
-        if (userInput.interest === 'FinTech') {
-            field = 'finTech';
-        } else if (userInput.interest === 'Healthcare') {
-            field = 'healthcare';
-        } else if (userInput.interest === 'E-Commerce') {
-            field = 'eCommerce';
-        } else if (userInput.interest === 'Education') {
-            field = 'education';
+        const createResults = () => {
+            let field = '';
+            if (userInput.interest === 'FinTech') {
+                field = 'finTech';
+            } else if (userInput.interest === 'Healthcare') {
+                field = 'healthcare';
+            } else if (userInput.interest === 'E-Commerce') {
+                field = 'eCommerce';
+            } else if (userInput.interest === 'Education') {
+                field = 'education';
+            }
+            const ideas = result.filter((object) => 
+                object.resourceSubsection === field
+            )
+            setIdeas(ideas);
+    
+            const filterVideos = result.filter((object) => 
+                object.resourceSubsection === 'youtubeVideo'
+            ).map((object) => {
+                const newObject = {
+                    resourceTitle: object.resourceTitle,
+                    link: object.link.match(/v=(.*)/)[1]
+                }
+                return newObject;
+            })
+    
+            setVideos(filterVideos);
+    
+            const techResource = result.filter((object) => 
+                object.resourceSubsection === 'techDocumentation'
+            )
+            setTechResource(techResource);
+    
+            const forum = result.filter((object) => 
+                object.resourceSubsection === 'forum'
+        )
+            setForum(forum);
         }
-        const ideas = result.filter((object) => 
-            object.resourceSubsection === field
-        )
-        setIdeas(ideas);
 
-        const videos = result.filter((object) => 
-            object.resourceSubsection === 'youtubeVideo'
-        )
-        setVideos(videos);
+        createResults();
+    }, [result, userInput]);
 
-        const techResource = result.filter((object) => 
-            object.resourceSubsection === 'techDocumentation'
-        )
-        setTechResource(techResource);
-
-        const forum = result.filter((object) => 
-            object.resourceSubsection === 'forum'
-    )
-        setForum(forum);
-    }
 
     return (
         <>
@@ -69,9 +77,12 @@ const UserResult = ({userInput, result}) => {
                 <section className="right-results-section">
                     <h2>Additional Projects</h2>
                     <ul className="right-results-links">
-                        {videos.map((object, index) => {
+                        {videos.map((value, index) => {
                             return(
-                                <li key={index}><a href={object.link} target="_blank" rel="noreferrer">{object.resourceTitle}</a></li>
+                                <li className={index}>
+                                    <p>{value.resourceTitle}</p>
+                                    <iframe width="350" height="215" src={"https://www.youtube.com/embed/" + value.link} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </li>
                             )
                         })}
                     </ul>
@@ -97,7 +108,6 @@ const UserResult = ({userInput, result}) => {
                         })}
                     </ul>
                     </div>
-                    {/* <div className="bottom-results-image"></div> */}
                 </section>
             </div>
             <Footer />
