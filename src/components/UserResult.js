@@ -13,7 +13,7 @@ const UserResult = ({userInput, result}) => {
             if (userInput.interest === 'FinTech') {
                 field = 'finTech';
             } else if (userInput.interest === 'Healthcare') {
-                field = 'healthcare';
+                field = 'healthCare';
             } else if (userInput.interest === 'E-Commerce') {
                 field = 'eCommerce';
             } else if (userInput.interest === 'Education') {

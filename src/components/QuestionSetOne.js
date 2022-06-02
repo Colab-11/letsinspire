@@ -9,6 +9,7 @@ function QuestionSetOne({userInput, setUserInput}) {
     const [questionIndex, setQuestionIndex] = useState(0);
     const [fillAlert, setFillAlert] = useState(false);
     const [selectAlert, setSelectAlert] = useState(false);
+    const [selectLang, setSelectLang] = useState(false);
     const [complete, setComplete] = useState(false);
 
     const questionsArr = [
@@ -51,11 +52,18 @@ function QuestionSetOne({userInput, setUserInput}) {
             setFillAlert(false);
         }
 
-        if (questionIndex === 1 && userInput.language === '') {
-            setSelectAlert(true);
+        // if (questionIndex === 1 && userInput.language === '') {
+        //     setSelectAlert(true);
+        //     return
+        // } else {
+        //     setSelectAlert(false);
+        // }
+        
+        if (questionIndex === 1 && userInput.language === 'Python') {
+            setSelectLang(true);
             return
         } else {
-            setSelectAlert(false);
+            setSelectLang(false);
         }
 
         if (questionIndex === 2 && userInput.interest === '') {
@@ -142,7 +150,7 @@ function QuestionSetOne({userInput, setUserInput}) {
                     
                         {questionIndex === 0 ? <AnswerFillInput handleChange={handleChange} fillAlert={fillAlert} userInput={userInput} index={questionIndex}/> : null}
 
-                        {questionIndex === 1 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}  
+                        {questionIndex === 1 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert} selectLang={selectLang}/> : null}  
 
                         {questionIndex === 2 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert} /> : null}       
 

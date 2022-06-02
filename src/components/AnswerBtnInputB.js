@@ -1,8 +1,9 @@
-const AnswerBtnInputB = ({userInput, response, index, handleSelect, selectAlert}) => {
+const AnswerBtnInputB = ({userInput, response, index, handleSelect, selectAlert, selectLang}) => {
     const answers = response[index];
     return(
         <>
             {selectAlert ? <div className="select-alert">Please choose an option</div> : null}
+            {selectLang ? <div className="select-alert">Please select JavaScript! Python coming soon.</div> : null}
             {index === 1 ? 
                 <div className="answer-outline answer-one-column">
                     {answers.options.map((answer, index) => 
