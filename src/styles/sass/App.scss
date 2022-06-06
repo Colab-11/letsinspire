@@ -16,6 +16,7 @@ $neutral-light: #C4C4C4;
 
 html {
     font-size: 125%; // makes font 20px
+    scroll-behavior: smooth;
 }
 
 body {
@@ -76,11 +77,20 @@ a {
     background-position: center;
 }
 
-.welcome-image ~ p {
-    text-align: center;
-    font-size: 0.75rem;
-    width: 70%;
-    margin: 30px auto;
+main {
+    p {
+        text-align: center;
+        font-size: 0.75rem;
+        width: 70%;
+    }
+    p:first-of-type {
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    p:last-of-type {
+        margin-top: 20px;
+        margin-bottom: 40px;       
+    }
 }
 
 .loading-results {

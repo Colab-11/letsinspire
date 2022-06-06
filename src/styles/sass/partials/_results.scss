@@ -30,9 +30,10 @@
 }
 
 .hero-text {
+    margin-top: 20px;
     background-color: lighten($primary, 42%);
     .wrapper {
-        padding: 40px 0;
+        padding-top: 50px;
         display: flex;
         justify-content: space-between;
         .description {
@@ -45,10 +46,36 @@
             span {
                 text-decoration: underline;
             }
+            p:nth-child(3) {
+                margin-top: 20px;
+            }
             .user-pick {
-                font-size: 1rem;
-                font-weight: 500;
+                font-size: 0.9rem;
+                font-weight: 600;
                 margin: 10px 0;
+            }
+            .language, .field {
+                display: flex;
+            }
+            .language:before {
+                background-image: url(./../../assets/Google-Code.png);
+                background-repeat: no-repeat;
+                background-size: 25px;
+                background-position: 0 2px;
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                content: "";
+            }
+            .field:before {
+                background-image: url(./../../assets/Organization.png);
+                background-repeat: no-repeat;
+                background-size: 25px;
+                display: inline-block;
+                background-position: 0 2px;
+                width: 30px;
+                height: 30px;
+                content: "";
             }
         }
         .result-image {
@@ -57,6 +84,22 @@
             background-size: contain;
             width: 400px;
             height: 350px;
+        }
+    }
+    .navigate-down {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 30px;
+        div {
+            background-image: url(../../assets/Double-Down.png);
+            background-repeat: no-repeat;
+            background-size: 60px;
+            background-position: center;
+            height: 60px;
+            width: 60px;
+        }
+        a {
+            color: #000;
         }
     }
 }

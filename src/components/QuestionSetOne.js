@@ -59,7 +59,7 @@ function QuestionSetOne({userInput, setUserInput}) {
         //     setSelectAlert(false);
         // }
         
-        if (questionIndex === 1 && userInput.language === 'Python') {
+        if ((questionIndex === 1 && userInput.language === '') || (questionIndex === 1 && userInput.language === 'Python')) {
             setSelectLang(true);
             return
         } else {

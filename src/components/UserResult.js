@@ -58,13 +58,14 @@ const UserResult = ({userInput, result}) => {
                     <div className="description">
                         <p>Thanks for using our app <span>{userInput.userName}</span></p>
                         <p>Below you will find the resources we curated for you to help start your personal project. Good luck and we hope that this encourages you to pursue your passions!</p>
-                        <p className="user-pick">Your Language: {userInput.language}</p>
-                        <p className="user-pick">Field of Interest: {userInput.interest}</p>
+                        <p className="user-pick language">Your Language: {userInput.language}</p>
+                        <p className="user-pick field">Field of Interest: {userInput.interest}</p>
                     </div>
                     <div className="result-image"></div>
                 </div>
+                <div className="navigate-down"><a href="#result"><div></div></a></div>
             </section>
-            <div className="user-container wrapper">
+            <div className="user-container wrapper" id="result">
                 <section className="left-results-section">
                     <h2>Recommended Projects</h2>
                     <ul className="left-results-links">
