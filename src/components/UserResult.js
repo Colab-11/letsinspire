@@ -1,4 +1,5 @@
-import Footer from "./Footer";
+// import Footer from "./Footer";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const UserResult = ({userInput, result}) => {
@@ -97,7 +98,6 @@ const UserResult = ({userInput, result}) => {
                     </ul>
                     </div>
                 </section>
-                
                 <div className="separator-line"></div>
                 <section className="right-results-section">
                     <h2>Additional Projects</h2>
@@ -106,14 +106,20 @@ const UserResult = ({userInput, result}) => {
                             return(
                                 <li className={index}>
                                     <p>{value.resourceTitle}</p>
-                                    <iframe width="350" height="215" src={"https://www.youtube.com/embed/" + value.link} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe src={"https://www.youtube.com/embed/" + value.link} title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                                 </li>
                             )
                         })}
                     </ul>
                 </section>
             </div>
-            <Footer />
+            <div className="return wrapper">
+                <p>Not satisfied with what you see?</p>
+                <div className="btn-primary-link">
+                    <Link to="/">Find a new project</Link>
+                </div>
+            </div>
+            {/* <Footer /> */}
         </>
     )
 }

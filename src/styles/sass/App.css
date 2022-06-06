@@ -506,10 +506,10 @@ nav {
 .hero-text .navigate-down div {
   background-image: url(../../assets/Double-Down.png);
   background-repeat: no-repeat;
-  background-size: 60px;
+  background-size: 50px;
   background-position: center;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
 }
 .hero-text .navigate-down a {
   color: #000;
@@ -517,6 +517,9 @@ nav {
 
 .left-results-section {
   width: 55%;
+}
+.left-results-section ul:nth-child(2) {
+  margin-bottom: 80px;
 }
 
 .right-results-section {
@@ -545,7 +548,7 @@ nav {
   margin-top: 20px;
   width: 2px;
   background-color: #e2e2e2;
-  height: 100%;
+  height: 600px;
 }
 
 .separator-line-bottom {
@@ -553,6 +556,19 @@ nav {
   background-color: #e2e2e2;
   width: 100%;
   margin-bottom: 30px;
+}
+
+.return {
+  border-top: 2px solid #e2e2e2;
+  padding-top: 40px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.return p {
+  font-size: 1.2rem;
+  padding-bottom: 5px;
 }
 
 .progress {
@@ -594,7 +610,7 @@ h1 {
 }
 
 h2 {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 600;
 }
 
