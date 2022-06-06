@@ -143,7 +143,7 @@ function QuestionSetOne({userInput, setUserInput}) {
         <div className="question-container-flex">
             {questionIndex <= 3 ? 
             <>
-                <div className="question-container wrapper">
+                <div className="question-container wrapper" id={'question'+questionIndex}>
                     <p>Question #{questionIndex + 1}</p>
                     <h1>{questionsArr[questionIndex].question}</h1>
                     <Progress step={questionIndex} complete={complete}/>

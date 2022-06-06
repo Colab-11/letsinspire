@@ -1,5 +1,5 @@
 nav {
-    height: 15vh;
+    height: 16vh;
     padding: 10px 0;
 }
 
@@ -18,7 +18,7 @@ nav {
         border-bottom: 1px solid $secondary;
         & ~ p {
             margin-top: 8px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
     }
 }
@@ -26,5 +26,69 @@ nav {
 .user-sign-in {
     button:first-of-type {
         margin-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .brand {
+        width: 40%;
+        .logo {
+            font-size: 0.9rem;
+            & ~ p {
+                margin-top: 5px;
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .user-sign-in {
+        button:first-of-type {
+            margin-right: 0px;
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .brand {
+        width: 45%;
+        .logo {
+            font-size: 0.8rem;
+            & ~ p {
+                margin-top: 5px;
+                font-size: 0.7rem;
+            }
+        }
+    }
+
+    .user-sign-in {
+        button {
+            font-size: 0.7rem;
+            padding: 12px 20px;
+        }
+        button:first-of-type {
+            margin-right: 0px;
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .brand {
+        width: 40%;
+        .logo {
+            font-size: 0.8rem;
+            & ~ p {
+                margin-top: 5px;
+                font-size: 0.7rem;
+            }
+        }
+    }
+    .user-sign-in {
+        button {
+            font-size: 0.7rem;
+            padding: 10px 18px;
+        }
+        button:first-of-type {
+            margin-right: 0px;
+        }
     }
 }

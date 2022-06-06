@@ -289,7 +289,7 @@ button {
 }
 
 nav {
-  height: 15vh;
+  height: 16vh;
   padding: 10px 0;
 }
 
@@ -310,22 +310,90 @@ nav {
 }
 .brand .logo ~ p {
   margin-top: 8px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 
 .user-sign-in button:first-of-type {
   margin-right: 20px;
 }
 
+@media (max-width: 768px) {
+  .brand {
+    width: 40%;
+  }
+  .brand .logo {
+    font-size: 0.9rem;
+  }
+  .brand .logo ~ p {
+    margin-top: 5px;
+    font-size: 0.8rem;
+  }
+
+  .user-sign-in button:first-of-type {
+    margin-right: 0px;
+  }
+}
+@media (max-width: 540px) {
+  .brand {
+    width: 45%;
+  }
+  .brand .logo {
+    font-size: 0.8rem;
+  }
+  .brand .logo ~ p {
+    margin-top: 5px;
+    font-size: 0.7rem;
+  }
+
+  .user-sign-in button {
+    font-size: 0.7rem;
+    padding: 12px 20px;
+  }
+  .user-sign-in button:first-of-type {
+    margin-right: 0px;
+  }
+}
+@media (max-width: 420px) {
+  .brand {
+    width: 40%;
+  }
+  .brand .logo {
+    font-size: 0.8rem;
+  }
+  .brand .logo ~ p {
+    margin-top: 5px;
+    font-size: 0.7rem;
+  }
+
+  .user-sign-in button {
+    font-size: 0.7rem;
+    padding: 10px 18px;
+  }
+  .user-sign-in button:first-of-type {
+    margin-right: 0px;
+  }
+}
 .question-container {
   padding-top: 10px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
-.question-container h1:first-child {
-  padding-top: 40px;
+.question-container p:first-child {
+  margin-bottom: 10px;
+}
+.question-container h1 {
+  align-self: center;
+  width: 80%;
+  margin-top: 0px;
+}
+
+#question0 {
+  padding-top: 30px;
 }
 
 .name-input {
+  align-self: center;
   border: none;
   width: 50%;
   padding: 18px;
@@ -344,6 +412,18 @@ nav {
   padding: 12px 25px;
 }
 
+@media (max-width: 540px) {
+  .name-input {
+    width: 80%;
+    font-size: 0.8rem;
+    padding: 12px;
+    margin-top: 10px;
+  }
+
+  .nav-btn {
+    width: 65%;
+  }
+}
 .answer-group {
   display: flex;
   flex-wrap: wrap;
@@ -390,10 +470,11 @@ nav {
 }
 
 .answer-outline button {
+  font-size: 0.75rem;
   border-radius: 5px;
   border: 3px solid #fff;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1), 0px 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 18px 22px;
+  padding: 16px 22px;
   background-color: #fff;
 }
 
@@ -411,6 +492,13 @@ nav {
   box-shadow: 0px 6px 10px rgba(255, 128, 0, 0.1), 0px 2px 10px rgba(255, 128, 0, 0.1);
 }
 
+@media (max-width: 540px) {
+  .answer-one-column button {
+    font-size: 0.7rem;
+    padding: 16px 22px;
+    width: 100%;
+  }
+}
 .user-container a {
   padding: 0px;
   color: #074EE8;
@@ -444,34 +532,37 @@ nav {
   margin-top: 20px;
   background-color: #ffebd6;
 }
-.hero-text .wrapper {
+.hero-text .hero-text-flex {
+  display: flex;
+  align-items: center;
   padding-top: 50px;
   display: flex;
   justify-content: space-between;
 }
-.hero-text .wrapper .description {
+.hero-text .hero-text-flex .description {
   width: 50%;
 }
-.hero-text .wrapper .description p:first-of-type {
+.hero-text .hero-text-flex .description p:first-of-type {
   font-weight: 600;
-  font-size: 2rem;
+  line-height: 1.5;
+  font-size: 1.6rem;
   margin: 0px;
 }
-.hero-text .wrapper .description span {
+.hero-text .hero-text-flex .description span {
   text-decoration: underline;
 }
-.hero-text .wrapper .description p:nth-child(3) {
+.hero-text .hero-text-flex .description p:nth-child(3) {
   margin-top: 20px;
 }
-.hero-text .wrapper .description .user-pick {
+.hero-text .hero-text-flex .description .user-pick {
   font-size: 0.9rem;
   font-weight: 600;
   margin: 10px 0;
 }
-.hero-text .wrapper .description .language, .hero-text .wrapper .description .field {
+.hero-text .hero-text-flex .description .language, .hero-text .hero-text-flex .description .field {
   display: flex;
 }
-.hero-text .wrapper .description .language:before {
+.hero-text .hero-text-flex .description .language:before {
   background-image: url(./../../assets/Google-Code.png);
   background-repeat: no-repeat;
   background-size: 25px;
@@ -481,7 +572,7 @@ nav {
   height: 30px;
   content: "";
 }
-.hero-text .wrapper .description .field:before {
+.hero-text .hero-text-flex .description .field:before {
   background-image: url(./../../assets/Organization.png);
   background-repeat: no-repeat;
   background-size: 25px;
@@ -491,7 +582,7 @@ nav {
   height: 30px;
   content: "";
 }
-.hero-text .wrapper .result-image {
+.hero-text .hero-text-flex .result-image {
   background-image: url(../../assets/result_image.png);
   background-repeat: no-repeat;
   background-size: contain;
@@ -548,7 +639,7 @@ nav {
   margin-top: 20px;
   width: 2px;
   background-color: #e2e2e2;
-  height: 600px;
+  height: 620px;
 }
 
 .separator-line-bottom {
@@ -571,6 +662,64 @@ nav {
   padding-bottom: 5px;
 }
 
+@media (max-width: 940px) {
+  .hero-text .hero-text-flex .result-image {
+    width: 280px;
+    height: 260px;
+  }
+
+  iframe {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .hero-text .wrapper {
+    flex-direction: column;
+  }
+  .hero-text .wrapper .description {
+    width: 100%;
+  }
+  .hero-text .wrapper .description p:first-of-type {
+    font-size: 1.4rem;
+  }
+  .hero-text .wrapper .result-image {
+    margin-top: 20px;
+    width: 80%;
+    align-self: center;
+    height: 300px;
+  }
+
+  .left-results-section, .right-results-section {
+    width: 100%;
+  }
+
+  .left-results-section ul:nth-child(2) {
+    padding-bottom: 0px;
+  }
+
+  .separator-line {
+    display: none;
+  }
+
+  iframe {
+    width: 100%;
+    height: 260px;
+  }
+
+  .return {
+    text-align: center;
+  }
+}
+@media (max-width: 540px) {
+  iframe {
+    height: 200px;
+  }
+}
+@media (max-width: 380px) {
+  iframe {
+    height: 150px;
+  }
+}
 .progress {
   display: flex;
   -moz-column-gap: 15px;
@@ -615,7 +764,7 @@ h2 {
 }
 
 p, li {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 ul {
@@ -753,4 +902,19 @@ footer > div:nth-of-type(1) {
 footer .footer-info {
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 540px) {
+  h1 {
+    font-size: 1rem;
+  }
+
+  .wrapper {
+    width: 82%;
+  }
+
+  main p {
+    font-size: 0.7rem;
+    width: 80%;
+  }
 }/*# sourceMappingURL=App.css.map */

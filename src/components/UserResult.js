@@ -55,7 +55,7 @@ const UserResult = ({userInput, result}) => {
     return (
         <>
             <section className="hero-text">
-                <div className="wrapper">
+                <div className="hero-text-flex wrapper">
                     <div className="description">
                         <p>Thanks for using our app <span>{userInput.userName}</span></p>
                         <p>Below you will find the resources we curated for you to help start your personal project. Good luck and we hope that this encourages you to pursue your passions!</p>
