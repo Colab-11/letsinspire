@@ -16,6 +16,8 @@ const LoadingResults = ({userInput}) => {
         }).then((data) => {
             setData(data);
             setIsLoading(false);
+        }).catch((err) => {
+            console.log(err);
         })
     }, [])
 
