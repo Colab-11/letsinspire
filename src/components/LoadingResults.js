@@ -10,7 +10,7 @@ const LoadingResults = ({userInput}) => {
     const rotate = <FontAwesomeIcon icon={faArrowsRotate} />
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/projectResources?lang=javascript')
+        fetch('https://api.npoint.io/b57b21c4065ed47868b7')
         .then((res) => {
             return res.json();
         }).then((data) => {
