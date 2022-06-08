@@ -104,7 +104,7 @@ const UserResult = ({userInput, result}) => {
                     <ul className="right-results-links">
                         {videos.map((value, index) => {
                             return(
-                                <li className={index}>
+                                <li className={index} key={index}>
                                     <p>{value.resourceTitle}</p>
                                     <iframe src={"https://www.youtube.com/embed/" + value.link} title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                                 </li>
