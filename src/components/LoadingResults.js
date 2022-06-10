@@ -10,15 +10,12 @@ const LoadingResults = ({userInput}) => {
     const rotate = <FontAwesomeIcon icon={faArrowsRotate} />
 
     useEffect(() => {
-        fetch('https://api.jsonbin.io/v3/b/62a13314449a1f382101b5eb', {
-            headers: new Headers({
-                'X-Master-Key': '$2b$10$OcmHF33GbHlZs39WZaVxiO5AJVJB9QAxwaU01iklMXmf6KakiBbjq'
-            })
-        })
+        fetch('https://robotic-door-352700.wn.r.appspot.com/api/projectResources?lang=javascript')
         .then((res) => {
             return res.json();
         }).then((data) => {
-            setData(data.record);
+            console.log(data);
+            setData(data);
             setIsLoading(false);
         }).catch((err) => {
             console.log(err);
