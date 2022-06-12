@@ -459,7 +459,7 @@ nav {
        column-gap: 20px;
 }
 .answer-group button {
-  width: calc(50% - 20px);
+  width: calc(450px + 5vw);
   border-radius: 0;
 }
 
@@ -474,7 +474,7 @@ nav {
   row-gap: 20px;
 }
 .answer-one-group button {
-  width: calc(50% - 20px);
+  width: calc(450px + 5vw);
   border-radius: 0;
 }
 
@@ -486,7 +486,7 @@ nav {
   padding: 20px;
 }
 .answer-one-column button {
-  width: 50%;
+  width: calc(450px + 5vw);
   border-radius: 0;
 }
 
