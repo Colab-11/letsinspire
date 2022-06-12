@@ -9,10 +9,6 @@ const LoadingResults = ({userInput, setUserInput}) => {
 
     const rotate = <FontAwesomeIcon icon={faArrowsRotate} />
 
-    let params = {
-        "lang": userInput.language
-    }
-    
     console.log(`https://robotic-door-352700.wn.r.appspot.com/api/projectResources?lang=${userInput.language.toLowerCase()}`);
 
     useEffect(() => {
@@ -25,7 +21,7 @@ const LoadingResults = ({userInput, setUserInput}) => {
         }).catch((err) => {
             console.log(err);
         })
-    }, [])
+    }, [userInput.language])
 
     return (
         <>
