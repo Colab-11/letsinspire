@@ -162,7 +162,7 @@ function QuestionSetOne({userInput, setUserInput}) {
             : null
         }   
         {questionIndex === 4 
-            ? <LoadingResults userInput={userInput}/>
+            ? <LoadingResults userInput={userInput} setUserInput={setUserInput}/>
             : null}
         </div>
     )

@@ -39,15 +39,6 @@ const Progress = ({step, complete}) => {
                     </> 
                 : null
                 }
-                {/* {step === 3 ? complete === true ?
-                    <>
-                        <div className="step-complete"></div>
-                        <div className="step-complete"></div>
-                        <div className="step-complete"></div>
-                        <div className="step-complete"></div>
-                    </> : null
-                : null
-                } */}
             </div>            
         </div>
 

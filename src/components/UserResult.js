@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const UserResult = ({userInput, result}) => {
+const UserResult = ({userInput, result, setUserInput}) => {
     const [ideas, setIdeas] = useState([]);
     const [videos, setVideos] = useState([]);
     const [techResource, setTechResource] = useState([]);
@@ -51,7 +51,18 @@ const UserResult = ({userInput, result}) => {
         createResults();
     }, [result, userInput]);
 
-
+    const resetInputs = () => {
+        setUserInput({
+            userName: "",
+            language: "",
+            interest: "",
+            resource: "",
+            projectLength: "",
+            projectType: "",
+            projectName: ""
+        })
+    }
+    
     return (
         <>
             <section className="hero-text">
@@ -115,7 +126,7 @@ const UserResult = ({userInput, result}) => {
             </div>
             <div className="return wrapper">
                 <p>Not satisfied with what you see?</p>
-                <div className="btn-primary-link">
+                <div className="btn-primary-link" onClick={resetInputs}>
                     <Link to="/">Find a new project</Link>
                 </div>
             </div>

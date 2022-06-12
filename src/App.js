@@ -18,7 +18,7 @@ function App() {
 
   return (
       <div>
-        <Navbar />
+        <Navbar setUserInput={setUserInput}/>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/customize" element={<QuestionSetOne userInput={userInput} setUserInput={setUserInput} />} />
