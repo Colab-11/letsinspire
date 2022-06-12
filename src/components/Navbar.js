@@ -5,8 +5,11 @@ function Navbar() {
        <nav>
            <div className="nav-flex wrapper">
                     <Link to="/" className="brand">
-                        <p className="logo">Let's Inspire</p>
-                        <p>Find the Right Project for you</p>
+                        <div className="brand-logo"></div>
+                        <div className="logo-text">
+                            <p className="logo">Let's Inspire</p>
+                            <p>Find the Right Project for you</p>
+                        </div>
                     </Link>
                 <div className="user-sign-in">
                     <button className="btn-primary">Log in</button>

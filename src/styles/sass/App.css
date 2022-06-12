@@ -249,7 +249,7 @@ button {
   font-size: 0.75rem;
   color: #fff;
   background-color: #000000;
-  border-radius: 50px;
+  border-radius: 4px;
   padding: 12px 35px;
   font-weight: 500;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15), 0px 2px 15px rgba(0, 0, 0, 0.15);
@@ -290,7 +290,7 @@ button {
 
 nav {
   height: 100px;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .nav-flex {
@@ -301,11 +301,23 @@ nav {
 
 .brand {
   color: #000;
+  display: flex;
+}
+.brand p {
+  margin: 0px;
+}
+.brand .brand-logo {
+  margin-top: 10px;
+  margin-right: 15px;
+  background-image: url(../../assets/lets-inspire-logo.png);
+  background-repeat: no-repeat;
+  height: 70px;
+  width: 70px;
+  background-size: contain;
 }
 .brand .logo {
   font-size: 1.2rem;
   font-weight: 600;
-  margin: 1rem 0 0 0;
   border-bottom: 1px solid #000000;
 }
 .brand .logo ~ p {
@@ -319,18 +331,22 @@ nav {
 
 @media (max-width: 768px) {
   .brand {
-    width: 40%;
+    width: 50%;
   }
   .brand .logo {
     font-size: 0.9rem;
   }
   .brand .logo ~ p {
     margin-top: 5px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .user-sign-in button:first-of-type {
     margin-right: 0px;
+  }
+
+  .btn-primary, .btn-secondary {
+    font-size: 0.7rem;
   }
 }
 @media (max-width: 540px) {
@@ -342,7 +358,7 @@ nav {
   }
   .brand .logo ~ p {
     margin-top: 5px;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 
   .user-sign-in button {
@@ -362,7 +378,7 @@ nav {
   }
   .brand .logo ~ p {
     margin-top: 5px;
-    font-size: 0.7rem;
+    font-size: 0.5rem;
   }
 
   .user-sign-in button {
@@ -373,8 +389,16 @@ nav {
     margin-right: 0px;
   }
 }
+.question-container-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80vh;
+}
+
 .question-container {
   padding-top: 10px;
+  align-self: center;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -389,20 +413,24 @@ nav {
 }
 
 #question0 {
-  padding-top: 30px;
+  margin-top: -180px;
+}
+
+#question1 {
+  margin-top: -100px;
 }
 
 .name-input {
   align-self: center;
   border: none;
-  width: 50%;
+  width: calc(450px + 5vw);
   padding: 18px;
   border-bottom: 1px solid grey;
   background-color: transparent;
 }
 
 .nav-btn {
-  width: 35%;
+  width: calc(450px + 5vw);
   margin: 20px auto;
   display: flex;
   justify-content: space-between;
@@ -413,15 +441,13 @@ nav {
 }
 
 @media (max-width: 540px) {
-  .name-input {
-    width: 80%;
-    font-size: 0.8rem;
-    padding: 12px;
-    margin-top: 10px;
+  .name-input, .nav-btn {
+    width: calc(350px + 5vw);
   }
-
-  .nav-btn {
-    width: 65%;
+}
+@media (max-width: 420px) {
+  .name-input, .nav-btn {
+    width: 320px;
   }
 }
 .answer-group {
@@ -535,7 +561,7 @@ nav {
 .hero-text .hero-text-flex {
   display: flex;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 40px;
   display: flex;
   justify-content: space-between;
 }
@@ -592,7 +618,7 @@ nav {
 .hero-text .navigate-down {
   display: flex;
   justify-content: center;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 }
 .hero-text .navigate-down div {
   background-image: url(../../assets/Double-Down.png);
@@ -607,14 +633,14 @@ nav {
 }
 
 .left-results-section {
-  width: 55%;
+  width: 40%;
 }
 .left-results-section ul:nth-child(2) {
   margin-bottom: 80px;
 }
 
 .right-results-section {
-  width: 35%;
+  width: 40%;
   padding-bottom: 30px;
 }
 .right-results-section div {
@@ -637,9 +663,10 @@ nav {
 
 .separator-line {
   margin-top: 20px;
+  margin-left: 50px;
   width: 2px;
   background-color: #e2e2e2;
-  height: 620px;
+  height: 760px;
 }
 
 .separator-line-bottom {
@@ -660,6 +687,11 @@ nav {
 .return p {
   font-size: 1.2rem;
   padding-bottom: 5px;
+}
+
+iframe {
+  width: 100%;
+  height: 200px;
 }
 
 @media (max-width: 940px) {
@@ -738,6 +770,8 @@ nav {
 }
 
 .prog-container {
+  padding-top: 10px;
+  padding-bottom: 20px;
   display: flex;
   justify-content: center;
 }
@@ -798,7 +832,8 @@ a {
 
 .welcome-image {
   background-image: url(../../assets/hero_image.png);
-  height: 500px;
+  margin-top: 20px;
+  height: 450px;
   width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -910,7 +945,7 @@ footer .footer-info {
   }
 
   .wrapper {
-    width: 82%;
+    width: 90%;
   }
 
   main p {

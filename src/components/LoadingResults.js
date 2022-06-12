@@ -14,7 +14,6 @@ const LoadingResults = ({userInput}) => {
         .then((res) => {
             return res.json();
         }).then((data) => {
-            console.log(data);
             setData(data);
             setIsLoading(false);
         }).catch((err) => {

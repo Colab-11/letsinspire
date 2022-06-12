@@ -5,7 +5,7 @@ const Progress = ({step, complete}) => {
             <div className="progress">
                 {step === 0 ? 
                     <>
-                        <div className="step"></div>
+                        <div className="step-complete"></div>
                         <div className="step"></div>
                         <div className="step"></div>
                         <div className="step"></div>
@@ -15,7 +15,7 @@ const Progress = ({step, complete}) => {
                 {step === 1 ? 
                     <>
                         <div className="step-complete"></div>
-                        <div className="step"></div>
+                        <div className="step-complete"></div>
                         <div className="step"></div>
                         <div className="step"></div>
                     </>
@@ -25,25 +25,19 @@ const Progress = ({step, complete}) => {
                     <>
                         <div className="step-complete"></div>
                         <div className="step-complete"></div>
-                        <div className="step"></div>
+                        <div className="step-complete"></div>
                         <div className="step"></div>
                     </>
                     : null
                 }
-                {step === 3 ? complete === false ?
-                    <>
-                        <div className="step-complete"></div>
-                        <div className="step-complete"></div>
-                        <div className="step-complete"></div>
-                        <div className="step"></div>
-                    </> : 
+                {step === 3 ?
                     <>
                         <div className="step-complete"></div>
                         <div className="step-complete"></div>
                         <div className="step-complete"></div>
                         <div className="step-complete"></div>
-                    </>
-                    : null
+                    </> 
+                : null
                 }
                 {/* {step === 3 ? complete === true ?
                     <>
