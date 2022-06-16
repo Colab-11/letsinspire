@@ -1,4 +1,4 @@
-const Progress = ({step, complete}) => {
+const Progress = ({step}) => {
     return(
 
         <div className="prog-container">

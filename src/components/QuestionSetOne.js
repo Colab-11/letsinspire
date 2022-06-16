@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AnswerFillInput from "./AnswerFillInput";
-import AnswerBtnInputB from "./AnswerBtnInputB";
+import AnswerBtnInput from "./AnswerBtnInput";
 import LoadingResults from "./LoadingResults";
 import Navigator from "./Navigator";
 import Progress from "./Progress";
@@ -90,8 +90,7 @@ function QuestionSetOne({userInput, setUserInput}) {
 
     const handleChange = (e) => {
         e.preventDefault();
-        const input = e.target.value;
-        
+        const input = e.target.value.replace(/ +/g, '');
         if (questionIndex === 0) {
             setUserInput(prevState => ({
                 ...prevState,
@@ -101,7 +100,6 @@ function QuestionSetOne({userInput, setUserInput}) {
     }
     
     const handleSelect = (e) => {
-        e.preventDefault();
         const input = e.target.value;
         if (questionIndex === 1) {
             setUserInput(prevState => ({
@@ -142,11 +140,11 @@ function QuestionSetOne({userInput, setUserInput}) {
                     
                         {questionIndex === 0 ? <AnswerFillInput handleChange={handleChange} fillAlert={fillAlert} userInput={userInput} index={questionIndex}/> : null}
 
-                        {questionIndex === 1 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}  
+                        {questionIndex === 1 ? <AnswerBtnInput response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}  
 
-                        {questionIndex === 2 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert} /> : null}       
+                        {questionIndex === 2 ? <AnswerBtnInput response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert} /> : null}       
 
-                        {questionIndex === 3 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}          
+                        {questionIndex === 3 ? <AnswerBtnInput response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}          
 
                 </div>
                 <Navigator next={navigateNext} back={navigateBack} index={questionIndex}/>

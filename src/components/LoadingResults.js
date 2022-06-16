@@ -5,6 +5,9 @@ import UserResult from './UserResult';
 
 const LoadingResults = ({userInput, setUserInput}) => {
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState({
+        errorMessage: ''
+    })
     const [data, setData] = useState([]);
 
     const rotate = <FontAwesomeIcon icon={faArrowsRotate} />
@@ -17,7 +20,8 @@ const LoadingResults = ({userInput, setUserInput}) => {
             setData(data);
             setIsLoading(false);
         }).catch((err) => {
-            console.log(err);
+            setError({errorMessage: err.message})
+            setIsLoading(false);
         })
     }, [userInput.language])
 
@@ -28,7 +32,15 @@ const LoadingResults = ({userInput, setUserInput}) => {
                     <h1>Finding Your Project</h1>
                     <div className='load-icon'>{rotate}</div>
                 </div>
-            : <UserResult result={data} userInput={userInput} setUserInput={setUserInput}/>
+            : !error.errorMessage && <UserResult result={data} userInput={userInput} setUserInput={setUserInput}/>
+            }
+
+            {
+                error.errorMessage &&
+                <div className='error'>
+                    <h1>Oops!</h1>
+                    <p>{error.errorMessage}</p>
+                </div>
             }
         </> 
     )

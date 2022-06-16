@@ -128,7 +128,6 @@ main {
     }
   }
 
-
 .spinner {
     width: 40px;
     height: 40px;
@@ -172,6 +171,18 @@ main {
           flex-direction: column;
       }
   }
+
+.error {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%;
+    > * {
+        margin: 10px;
+        text-align: center;
+    }
+}
 
 @media (max-width: 540px) {
     h1 {

@@ -939,6 +939,18 @@ footer .footer-info {
   flex-direction: column;
 }
 
+.error {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 0 auto;
+  width: 80%;
+}
+.error > * {
+  margin: 10px;
+  text-align: center;
+}
+
 @media (max-width: 540px) {
   h1 {
     font-size: 1rem;
