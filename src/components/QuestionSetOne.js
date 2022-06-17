@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AnswerFillInput from "./AnswerFillInput";
-import AnswerBtnInputB from "./AnswerBtnInputB";
-import QuestionSetTwo from "./QuestionSetTwo";
+import AnswerBtnInput from "./AnswerBtnInput";
+import LoadingResults from "./LoadingResults";
 import Navigator from "./Navigator";
 import Progress from "./Progress";
 
@@ -28,7 +28,7 @@ function QuestionSetOne({userInput, setUserInput}) {
             options: [
                 'FinTech',
                 'Healthcare',
-                'Gaming',
+                'E-Commerce',
                 'Education'
             ]
         },
@@ -50,7 +50,7 @@ function QuestionSetOne({userInput, setUserInput}) {
         } else {
             setFillAlert(false);
         }
-
+        
         if (questionIndex === 1 && userInput.language === '') {
             setSelectAlert(true);
             return
@@ -77,7 +77,7 @@ function QuestionSetOne({userInput, setUserInput}) {
         }
         if (questionIndex === 3) {
             setComplete(true);
-            setTimeout(() => setQuestionIndex(questionIndex + 1), 1000);
+            setTimeout(() => setQuestionIndex(questionIndex + 1), 200);
         }
     }
 
@@ -90,8 +90,7 @@ function QuestionSetOne({userInput, setUserInput}) {
 
     const handleChange = (e) => {
         e.preventDefault();
-        const input = e.target.value;
-        
+        const input = e.target.value.replace(/ +/g, '');
         if (questionIndex === 0) {
             setUserInput(prevState => ({
                 ...prevState,
@@ -101,7 +100,6 @@ function QuestionSetOne({userInput, setUserInput}) {
     }
     
     const handleSelect = (e) => {
-        e.preventDefault();
         const input = e.target.value;
         if (questionIndex === 1) {
             setUserInput(prevState => ({
@@ -123,29 +121,39 @@ function QuestionSetOne({userInput, setUserInput}) {
         }
     }
 
+    const handleKeyPress = (e) => {
+        if (e.keyCode === 13) {
+            navigateNext();
+        }
+    }
+
+    document.addEventListener("keydown", handleKeyPress);
+
     return(
         <div className="question-container-flex">
             {questionIndex <= 3 ? 
             <>
-                <div className="question-container wrapper">
+                <div className="question-container wrapper" id={'question'+questionIndex}>
                     <p>Question #{questionIndex + 1}</p>
                     <h1>{questionsArr[questionIndex].question}</h1>
                     <Progress step={questionIndex} complete={complete}/>
                     
                         {questionIndex === 0 ? <AnswerFillInput handleChange={handleChange} fillAlert={fillAlert} userInput={userInput} index={questionIndex}/> : null}
 
-                        {questionIndex === 1 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}  
+                        {questionIndex === 1 ? <AnswerBtnInput response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}  
 
-                        {questionIndex === 2 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert} /> : null}       
+                        {questionIndex === 2 ? <AnswerBtnInput response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert} /> : null}       
 
-                        {questionIndex === 3 ? <AnswerBtnInputB response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}          
+                        {questionIndex === 3 ? <AnswerBtnInput response={questionsArr} index={questionIndex} userInput={userInput} handleSelect={handleSelect} selectAlert={selectAlert}/> : null}          
 
                 </div>
                 <Navigator next={navigateNext} back={navigateBack} index={questionIndex}/>
             </>
             : null
         }   
-        {questionIndex === 4 ? <QuestionSetTwo userInput={userInput} setUserInput={setUserInput} setComplete={setComplete} setIndex={setQuestionIndex}/> : null}
+        {questionIndex === 4 
+            ? <LoadingResults userInput={userInput} setUserInput={setUserInput}/>
+            : null}
         </div>
     )
 }

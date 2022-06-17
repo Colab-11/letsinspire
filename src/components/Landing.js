@@ -5,9 +5,10 @@ function Landing() {
         <div className="landing-page">
             <main className=" wrapper">
                 <div className="welcome-image"></div>
-                <p>Are you a Software Developer looking for a new personal project to work on? Fill out our quick questionaire and get matched with a project that best suites your interests and passions. Let us do the hard work for you!</p>
+                <p>Are you a Software Developer looking for a new personal project to work on? Fill out our quick questionnaire and get matched with a project that best suits your interests and passions.</p>
+                <p>Let us do the hard work for you!</p>
                 <div className="btn-primary-link">
-                    <Link to="/start">Let's Get Started!</Link>
+                    <Link to="/customize">Let's Get Started!</Link>
                 </div>
             </main>
         </div>

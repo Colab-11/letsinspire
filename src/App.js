@@ -4,7 +4,6 @@ import './styles/sass/App.css'
 import Landing from './components/Landing';
 import Navbar from './components/Navbar';
 import QuestionSetOne from './components/QuestionSetOne';
-import UserResult from './components/UserResult';
 
 function App() {
   const [userInput, setUserInput] = useState({
@@ -19,11 +18,10 @@ function App() {
 
   return (
       <div>
-        <Navbar />
+        <Navbar setUserInput={setUserInput}/>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/start" element={<QuestionSetOne userInput={userInput} setUserInput={setUserInput}/>} />
-          <Route path="/result" element={<UserResult userInput={userInput}/>} />
+          <Route path="/customize" element={<QuestionSetOne userInput={userInput} setUserInput={setUserInput} />} />
         </Routes>
       </div>
   );
