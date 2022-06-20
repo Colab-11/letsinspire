@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# Let's Inspire 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ Let's Inspire is a web app that provides resources for beginners to develop a personal project, through learning guidance on a selected language and interest.
+
+
+## Live URL
+
+[letsinspire.netlify.app/](letsinspire.netlify.app/)
+
+## Backend
+
+[https://github.com/lsaffel/letsinspire-be](https://github.com/lsaffel/letsinspire-be)
 
 ## Available Scripts
 
